@@ -86,6 +86,15 @@ class User extends BaseUser
      */
     private $szakiranyVezeto;
 
+    /**
+     * @ORM\OneToMany(targetEntity="SzakdolgozatFelhasznaloKapcsolat", mappedBy="felhasznalo")
+     */
+    private $userKapcsolat;
+    /**
+     * @ORM\OneToMany(targetEntity="KulsoCeg", mappedBy="felhasznalo")
+     */
+    private $userKulsoCeg;
+
     public function __construct()
     {
         parent::__construct();

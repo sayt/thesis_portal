@@ -83,4 +83,9 @@ class Szakdolgozat
      * @ORM\JoinColumn(name="szak", referencedColumnName="id")
      */
     private $szak;
+
+    /**
+     * @ORM\OneToMany(targetEntity="SzakdolgozatFelhasznaloKapcsolat", mappedBy="szakdolgozat")
+     */
+    private $szakdolgozatKapcsolat;
 }
