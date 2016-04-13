@@ -68,6 +68,11 @@ class Szakdolgozat
     private $tartalmazniaKell;
 
     /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $vegeredmeny;
+
+    /**
      * @ORM\Column(type="boolean")
      */
     private $titkos;

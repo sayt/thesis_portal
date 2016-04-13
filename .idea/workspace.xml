@@ -1,30 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c9f00d9-79c0-4da0-a7ae-48c85c88c720" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag/Bizottsag.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/BizottsagErtekeles.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag/BizottsagErtekeles.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/BizottsagSzakdolgozat.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag/BizottsagSzakdolgozat.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/BizottsagTag.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag/BizottsagTag.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/ErtekelesSzempontok.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag/ErtekelesSzempontok.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/FelhasznaloTargyEletut.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/FelhasznaloTargyEletut.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/File.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/File.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Intezet.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Intezet.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Kar.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Kar.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Konzultacio.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Konzultacio.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/KonzultacioFelhasznalo.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/KonzultacioFelhasznalo.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/KulsoCeg.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/KulsoCeg.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Levelkuldo.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/Levelkuldo.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Megjegyzes.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Megjegyzes.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Merfoldko.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Merfoldko.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Role.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/Role.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Szak.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Szak.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Szakdolgozat.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/SzakdolgozatFelhasznaloKapcsolat.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/SzakdolgozatFelhasznaloKapcsolat.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Szakirany.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Szakirany.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Targy.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Targy.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/User.php" />
+    <list default="true" id="8c9f00d9-79c0-4da0-a7ae-48c85c88c720" name="Default" comment="entity rendezve 2">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Szakdolgozat.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Szakdolgozat.php" />
     </list>
     <ignored path="thesis_portal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,7 +24,18 @@
     <favorites_list name="thesis_portal" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Szakdolgozat.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Szakdolgozat.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.17288135">
+              <caret line="70" column="43" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -89,7 +79,6 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Kar.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Intezet.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Szakirany.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Szakdolgozat.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/SzakdolgozatFelhasznaloKapcsolat.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Merfoldko.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Megjegyzes.php" />
@@ -103,6 +92,7 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/Levelkuldo.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/KulsoCeg.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/FelhasznaloTargyEletut.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Szakdolgozat.php" />
       </list>
     </option>
   </component>
@@ -194,6 +184,54 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thesis_portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thesis_portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Szakdolgozat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thesis_portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thesis_portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -294,14 +332,20 @@
       <option name="project" value="LOCAL" />
       <updated>1460540226223</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="entity rendezve">
+      <created>1460541168414</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1460541168414</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -340,7 +384,8 @@
     <MESSAGE value="rendezve + merfoldko" />
     <MESSAGE value="file + megjegyzes entity" />
     <MESSAGE value="entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="entity" />
+    <MESSAGE value="entity rendezve" />
+    <option name="LAST_COMMIT_MESSAGE" value="entity rendezve" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -491,14 +536,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Szakdolgozat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/SzakdolgozatFelhasznaloKapcsolat.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.05762712">
@@ -569,6 +606,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.05762712">
           <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Szakdolgozat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17288135">
+          <caret line="70" column="43" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
           <folding />
         </state>
       </provider>
