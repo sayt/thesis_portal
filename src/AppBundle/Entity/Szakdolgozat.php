@@ -112,4 +112,9 @@ class Szakdolgozat
      * @ORM\OneToMany(targetEntity="File", mappedBy="szakdolgozat")
      */
     private $szakdolgozatFile;
+
+    /**
+     * @ORM\OneToMany(targetEntity="BizottsagSzakdolgozat", mappedBy="szakdolgozat")
+     */
+    private $szakdolgozaBizottsagSzakdolgozat;
 }

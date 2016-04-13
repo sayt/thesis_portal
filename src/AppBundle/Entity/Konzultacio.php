@@ -63,4 +63,9 @@ class Konzultacio
      * @ORM\OneToMany(targetEntity="Megjegyzes", mappedBy="konzultacio")
      */
     private $konzultacioMegjegyzes;
+
+    /**
+     * @ORM\OneToMany(targetEntity="KonzultacioFelhasznalo", mappedBy="konzultacio")
+     */
+    private $konzultacioKonzultacioFelhasznalo;
 }

@@ -111,6 +111,16 @@ class User extends BaseUser
      */
     private $userFile;
 
+    /**
+     * @ORM\OneToMany(targetEntity="KonzultacioFelhasznalo", mappedBy="user")
+     */
+    private $userKonzultacioFelhasznalo;
+
+    /**
+     * @ORM\OneToMany(targetEntity="BizottsagTag", mappedBy="user")
+     */
+    private $userBizottsagTag;
+
     public function __construct()
     {
         parent::__construct();
