@@ -29,17 +29,17 @@ class Kar
     private $intezmenyName;
 
     /**
-     * @ORM\OneToMany(targetEntity="User", mappedBy="karUser")
+     * @ORM\OneToMany(targetEntity="User", mappedBy="kar")
      */
     private $karUser;
 
     /**
-     * @ORM\OneToMany(targetEntity="Intezet", mappedBy="karIntezet")
+     * @ORM\OneToMany(targetEntity="Intezet", mappedBy="kar")
      */
     private $karIntezet;
 
     /**
-     * @ORM\OneToMany(targetEntity="Role", mappedBy="karRole")
+     * @ORM\OneToMany(targetEntity="Role", mappedBy="kar")
      */
     private $karRole;
 }

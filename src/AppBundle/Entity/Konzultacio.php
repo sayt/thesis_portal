@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="szakdolgozatFelhasznaloKapcsolat")
+ * @ORM\Table(name="konzultacio")
  */
-class SzakdolgozatFelhasznaloKapcsolat
+class Konzultacio
 {
     /**
      * @ORM\Id
@@ -18,19 +18,29 @@ class SzakdolgozatFelhasznaloKapcsolat
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=100)
      */
-    private $viszony;
+    private $name;
+
+    /**
+     * @ORM\Column(type="string", length=10000)
+     */
+    private $description;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $allapot;
+    private $datumModositas;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="datetime")
      */
-    private $peldany;
+    private $veglegesDatum;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $allapot;
 
     /**
      * @ORM\Column(type="boolean")
@@ -38,13 +48,13 @@ class SzakdolgozatFelhasznaloKapcsolat
     private $status;
 
     /**
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="userKapcsolat")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="userKonzultacio")
      * @ORM\JoinColumn(name="felhasznalo", referencedColumnName="id")
      */
     private $felhasznalo;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Szakdolgozat", inversedBy="szakdolgozatSzakdolgozatFelhasznaloKapcsolat")
+     * @ORM\ManyToOne(targetEntity="Szakdolgozat", inversedBy="szakdolgozatKonzultacio")
      * @ORM\JoinColumn(name="szakdolgozat", referencedColumnName="id")
      */
     private $szakdolgozat;

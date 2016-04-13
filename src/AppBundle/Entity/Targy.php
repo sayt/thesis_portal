@@ -3,7 +3,6 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -36,10 +35,15 @@ class Targy
     /**
      * @ORM\OneToMany(targetEntity="FelhasznaloTargyEletut", mappedBy="targy")
      */
-    private $targy;
+    private $targyFelhasznaloTargyEletut;
 
     /**
-     * @ORM\OneToMany(targetEntity="Szakirany", mappedBy="szakiranyTargy")
+     * @ORM\OneToMany(targetEntity="User", mappedBy="targy")
      */
-    private $szakiranyTargy;
+    private $targyUser;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Szakirany", mappedBy="targy")
+     */
+    private $targySzakirany;
 }

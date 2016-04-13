@@ -3,7 +3,6 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -79,7 +78,7 @@ class Szakdolgozat
     private $status;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Szak", inversedBy="szakdolgozatSzak")
+     * @ORM\ManyToOne(targetEntity="Szak", inversedBy="szakSzakdolgozat")
      * @ORM\JoinColumn(name="szak", referencedColumnName="id")
      */
     private $szak;
@@ -87,5 +86,15 @@ class Szakdolgozat
     /**
      * @ORM\OneToMany(targetEntity="SzakdolgozatFelhasznaloKapcsolat", mappedBy="szakdolgozat")
      */
-    private $szakdolgozatKapcsolat;
+    private $szakdolgozatSzakdolgozatFelhasznaloKapcsolat;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Konzultacio", mappedBy="szakdolgozat")
+     */
+    private $szakdolgozatKonzultacio;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Levelkuldo", mappedBy="szakdolgozat")
+     */
+    private $szakdolgozatSzakdolgozat;
 }

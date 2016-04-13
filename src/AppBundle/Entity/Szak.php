@@ -3,7 +3,6 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -47,5 +46,5 @@ class Szak
     /**
      * @ORM\OneToMany(targetEntity="Szakdolgozat", mappedBy="szak")
      */
-    private $szakdolgozatSzak;
+    private $szakSzakdolgozat;
 }

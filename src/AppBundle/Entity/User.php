@@ -4,7 +4,6 @@ namespace AppBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -21,15 +20,11 @@ class User extends BaseUser
 
     /**
      * @ORM\Column(type="string", length=100)
-     *
-     * @Assert\NotBlank()
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=40)
-     *
-     * @Assert\NotBlank()
      */
     private $hallgatoiTorzskonyviSzam;
 
@@ -60,40 +55,46 @@ class User extends BaseUser
     private $kar;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Role", inversedBy="role")
+     * @ORM\ManyToOne(targetEntity="Role", inversedBy="roleUser")
      * @ORM\JoinColumn(name="role", referencedColumnName="id")
      */
     private $role;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Targyak", inversedBy="targy")
+     * @ORM\ManyToOne(targetEntity="Targy", inversedBy="targyUser")
      * @ORM\JoinColumn(name="targy", referencedColumnName="id")
      */
     private $targy;
 
     /**
-     * @ORM\OneToMany(targetEntity="FelhasznaloTargyEletut", mappedBy="hallgato")
+     * @ORM\OneToMany(targetEntity="FelhasznaloTargyEletut", mappedBy="felhasznalo")
      */
-    private $user;
+    private $userFelhasznaloTargyEletut;
 
     /**
      * @ORM\OneToMany(targetEntity="Levelkuldo", mappedBy="felhasznalo")
      */
-    private $felhsznalo;
+    private $userLevelkuldo;
 
     /**
-     * @ORM\OneToMany(targetEntity="Szakirany", mappedBy="szakiranyVezeto")
+     * @ORM\OneToMany(targetEntity="Szakirany", mappedBy="felhasznalo")
      */
-    private $szakiranyVezeto;
+    private $userSzakirany;
 
     /**
      * @ORM\OneToMany(targetEntity="SzakdolgozatFelhasznaloKapcsolat", mappedBy="felhasznalo")
      */
     private $userKapcsolat;
+
     /**
      * @ORM\OneToMany(targetEntity="KulsoCeg", mappedBy="felhasznalo")
      */
     private $userKulsoCeg;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Konzultacio", mappedBy="felhasznalo")
+     */
+    private $userKonzultacio;
 
     public function __construct()
     {

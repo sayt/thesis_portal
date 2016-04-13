@@ -34,13 +34,13 @@ class FelhasznaloTargyEletut
     private $status;
 
     /**
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="user")
-     * @ORM\JoinColumn(name="hallgato", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="userFelhasznaloTargyEletut")
+     * @ORM\JoinColumn(name="felhasznalo", referencedColumnName="id")
      */
-    private $hallgato;
+    private $felhasznalo;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Targy", inversedBy="targy")
+     * @ORM\ManyToOne(targetEntity="Targy", inversedBy="targyFelhasznaloTargyEletut")
      * @ORM\JoinColumn(name="targy", referencedColumnName="id")
      */
     private $targy;

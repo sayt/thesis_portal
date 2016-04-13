@@ -3,7 +3,6 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -39,13 +38,13 @@ class Levelkuldo
     private $status;
 
     /**
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="felhasznalo")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="userLevelkuldo")
      * @ORM\JoinColumn(name="felhasznalo", referencedColumnName="id")
      */
     private $felhasznalo;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Szakdolgozat", inversedBy="szakdolgozat")
+     * @ORM\ManyToOne(targetEntity="Szakdolgozat", inversedBy="szakdolgozatSzakdolgozat")
      * @ORM\JoinColumn(name="szakdolgozat", referencedColumnName="id")
      */
     private $szakdolgozat;
