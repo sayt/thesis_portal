@@ -1,14 +1,14 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace AppBundle\Entity\Felhasznalo;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="bizottsag")
+ * @ORM\Table(name="levelkuldo")
  */
-class Bizottsag
+class Levelkuldo
 {
     /**
      * @ORM\Id
@@ -23,24 +23,14 @@ class Bizottsag
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=20)
-     */
-    private $felevName;
-
-    /**
      * @ORM\Column(type="string", length=10000)
      */
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=20)
-     */
-    private $allapot;
-
-    /**
      * @ORM\Column(type="boolean")
      */
-    private $publikus;
+    private $allapot;
 
     /**
      * @ORM\Column(type="boolean")
@@ -48,12 +38,14 @@ class Bizottsag
     private $status;
 
     /**
-     * @ORM\OneToMany(targetEntity="BizottsagTag", mappedBy="bizottsag")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="userLevelkuldo")
+     * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
-    private $bizottsagBizottsagTag;
+    private $user;
 
     /**
-     * @ORM\OneToMany(targetEntity="BizottsagSzakdolgozat", mappedBy="bizottsag")
+     * @ORM\ManyToOne(targetEntity="Szakdolgozat", inversedBy="szakdolgozatLevelkuldo")
+     * @ORM\JoinColumn(name="szakdolgozat", referencedColumnName="id")
      */
-    private $bizottsagBizottsagSzakdolgozat;
+    private $szakdolgozat;
 }

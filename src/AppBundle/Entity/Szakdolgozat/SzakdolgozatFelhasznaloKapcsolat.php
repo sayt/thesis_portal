@@ -1,14 +1,14 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace AppBundle\Entity\Szakdolgozat;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="levelkuldo")
+ * @ORM\Table(name="szakdolgozatFelhasznaloKapcsolat")
  */
-class Levelkuldo
+class SzakdolgozatFelhasznaloKapcsolat
 {
     /**
      * @ORM\Id
@@ -18,14 +18,9 @@ class Levelkuldo
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=20)
      */
-    private $name;
-
-    /**
-     * @ORM\Column(type="string", length=10000)
-     */
-    private $description;
+    private $viszony;
 
     /**
      * @ORM\Column(type="boolean")
@@ -33,18 +28,23 @@ class Levelkuldo
     private $allapot;
 
     /**
+     * @ORM\Column(type="integer")
+     */
+    private $peldany;
+
+    /**
      * @ORM\Column(type="boolean")
      */
     private $status;
 
     /**
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="userLevelkuldo")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="userKapcsolat")
      * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Szakdolgozat", inversedBy="szakdolgozatLevelkuldo")
+     * @ORM\ManyToOne(targetEntity="Szakdolgozat", inversedBy="szakdolgozatSzakdolgozatFelhasznaloKapcsolat")
      * @ORM\JoinColumn(name="szakdolgozat", referencedColumnName="id")
      */
     private $szakdolgozat;

@@ -2,16 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c9f00d9-79c0-4da0-a7ae-48c85c88c720" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/BizottsagErtekeles.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/BizottsagSzakdolgozat.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/BizottsagTag.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/ErtekelesSzempontok.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/KonzultacioFelhasznalo.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag/Bizottsag.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/BizottsagErtekeles.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag/BizottsagErtekeles.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/BizottsagSzakdolgozat.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag/BizottsagSzakdolgozat.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/BizottsagTag.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag/BizottsagTag.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/ErtekelesSzempontok.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag/ErtekelesSzempontok.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/FelhasznaloTargyEletut.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/FelhasznaloTargyEletut.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/File.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/File.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Intezet.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Intezet.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Kar.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Kar.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Konzultacio.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Konzultacio.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/KonzultacioFelhasznalo.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/KonzultacioFelhasznalo.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/KulsoCeg.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/KulsoCeg.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Levelkuldo.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/Levelkuldo.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Megjegyzes.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Megjegyzes.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Merfoldko.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Merfoldko.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Role.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/Role.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Szak.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Szak.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Szakdolgozat.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/SzakdolgozatFelhasznaloKapcsolat.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/SzakdolgozatFelhasznaloKapcsolat.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Szakirany.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Szakirany.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Targy.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Targy.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/User.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Konzultacio.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Konzultacio.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
     </list>
     <ignored path="thesis_portal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,6 +80,29 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/BizottsagSzakdolgozat.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/BizottsagTag.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/ErtekelesSzempontok.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag/ErtekelesSzempontok.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag/BizottsagTag.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag/BizottsagSzakdolgozat.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag/BizottsagErtekeles.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag/Bizottsag.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Szak.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Kar.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Intezet.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Szakirany.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Szakdolgozat.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/SzakdolgozatFelhasznaloKapcsolat.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Merfoldko.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Megjegyzes.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Konzultacio.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/KonzultacioFelhasznalo.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/File.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Targy.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/User/User.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/User.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/Role.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/Levelkuldo.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/KulsoCeg.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/FelhasznaloTargyEletut.php" />
       </list>
     </option>
   </component>
@@ -161,42 +197,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thesis_portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thesis_portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thesis_portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thesis_portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -207,6 +207,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\thesis_portal\src\AppBundle\Entity\User" />
+      <recent name="C:\wamp\www\thesis_portal\src\AppBundle\Entity\Intezmeny" />
+      <recent name="C:\wamp\www\thesis_portal\src\AppBundle\Entity\Szakdolgozat" />
+      <recent name="C:\wamp\www\thesis_portal\src\AppBundle\Entity\Bizottsag" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -280,7 +288,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460537717808</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="entity">
+      <created>1460540226223</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1460540226223</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -325,7 +339,8 @@
     <MESSAGE value="rendezve + konzultacio" />
     <MESSAGE value="rendezve + merfoldko" />
     <MESSAGE value="file + megjegyzes entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="file + megjegyzes entity" />
+    <MESSAGE value="entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="entity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -372,180 +387,188 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/FelhasznaloTargyEletut.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag/Bizottsag.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68105066">
-          <caret line="41" column="72" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="72" />
+        <state vertical-scroll-proportion="0.23050848">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Kar.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag/BizottsagErtekeles.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1440678">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.05762712">
+          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Intezet.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag/BizottsagSzakdolgozat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19322033">
-          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.05762712">
+          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Levelkuldo.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag/BizottsagTag.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17073171">
-          <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.05762712">
+          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/KulsoCeg.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag/ErtekelesSzempontok.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35254237">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.20169492">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Role.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Kar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.923077">
-          <caret line="36" column="39" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="39" />
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Szak.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Szak.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.0">
-          <caret line="31" column="43" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="43" />
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/SzakdolgozatFelhasznaloKapcsolat.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Szakirany.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.153847">
-          <caret line="46" column="98" selection-start-line="46" selection-start-column="87" selection-end-line="46" selection-end-column="98" />
+        <state vertical-scroll-proportion="0.05762712">
+          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Szakirany.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/File.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.192307">
-          <caret line="39" column="17" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="17" />
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Targy.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Konzultacio.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.576923">
-          <caret line="37" column="29" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="29" />
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Merfoldko.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/KonzultacioFelhasznalo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27966103">
-          <caret line="22" column="18" selection-start-line="19" selection-start-column="4" selection-end-line="22" selection-end-column="18" />
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Megjegyzes.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Megjegyzes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6050847">
-          <caret line="21" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="62" selection-end-column="1" />
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/KonzultacioFelhasznalo.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Merfoldko.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25932205">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Konzultacio.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/Szakdolgozat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.961538">
-          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="27" selection-end-column="25" />
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/File.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat/SzakdolgozatFelhasznaloKapcsolat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3461537">
-          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="48" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.05762712">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Bizottsag.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Targy.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.807692">
-          <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.05762712">
+          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Szakdolgozat.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Intezmeny/Intezet.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.846154">
-          <caret line="113" column="30" selection-start-line="113" selection-start-column="30" selection-end-line="118" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.02881356">
+          <caret line="2" column="36" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/BizottsagSzakdolgozat.php">
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Bundle/Bundle.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.807692">
-          <caret line="57" column="88" selection-start-line="57" selection-start-column="88" selection-end-line="57" selection-end-column="88" />
+        <state vertical-scroll-proportion="0.10338983">
+          <caret line="97" column="25" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/FelhasznaloTargyEletut.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.230769">
-          <caret line="118" column="4" selection-start-line="118" selection-start-column="4" selection-end-line="120" selection-end-column="7" />
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/KulsoCeg.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/Levelkuldo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05762712">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="38" />
           <folding>
-            <element signature="e#36#78#0#PHP" expanded="true" />
+            <element signature="e#48#90#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/BizottsagTag.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Felhasznalo/Role.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78474575">
-          <caret line="47" column="67" selection-start-line="47" selection-start-column="67" selection-end-line="47" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/ErtekelesSzempontok.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7983051">
-          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/BizottsagErtekeles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02881356">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.05762712">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
           <folding />
         </state>
       </provider>
