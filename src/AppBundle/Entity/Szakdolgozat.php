@@ -96,5 +96,10 @@ class Szakdolgozat
     /**
      * @ORM\OneToMany(targetEntity="Levelkuldo", mappedBy="szakdolgozat")
      */
-    private $szakdolgozatSzakdolgozat;
+    private $szakdolgozatLevelkuldo;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Merfoldko", mappedBy="szakdolgozat")
+     */
+    private $szakdolgozatMerfoldko;
 }

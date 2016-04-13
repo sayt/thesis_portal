@@ -96,6 +96,11 @@ class User extends BaseUser
      */
     private $userKonzultacio;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Merfoldko", mappedBy="felhasznalo")
+     */
+    private $userMerfoldko;
+
     public function __construct()
     {
         parent::__construct();

@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="levelkuldo")
+ * @ORM\Table(name="merfoldko")
  */
-class Levelkuldo
+class Merfoldko
 {
     /**
      * @ORM\Id
@@ -28,9 +28,14 @@ class Levelkuldo
     private $description;
 
     /**
+     * @ORM\Column(type="date")
+     */
+    private $teljesitesiHatarido;
+
+    /**
      * @ORM\Column(type="boolean")
      */
-    private $allapot;
+    private $beadasra;
 
     /**
      * @ORM\Column(type="boolean")
@@ -38,14 +43,14 @@ class Levelkuldo
     private $status;
 
     /**
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="userLevelkuldo")
-     * @ORM\JoinColumn(name="felhasznalo", referencedColumnName="id")
-     */
-    private $felhasznalo;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Szakdolgozat", inversedBy="szakdolgozatLevelkuldo")
+     * @ORM\ManyToOne(targetEntity="Szakdolgozat", inversedBy="szakdolgozatMerfoldko")
      * @ORM\JoinColumn(name="szakdolgozat", referencedColumnName="id")
      */
     private $szakdolgozat;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="userMerfoldko")
+     * @ORM\JoinColumn(name="felhasznalo", referencedColumnName="id")
+     */
+    private $felhasznalo;
 }
