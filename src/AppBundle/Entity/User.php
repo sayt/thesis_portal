@@ -67,39 +67,49 @@ class User extends BaseUser
     private $targy;
 
     /**
-     * @ORM\OneToMany(targetEntity="FelhasznaloTargyEletut", mappedBy="felhasznalo")
+     * @ORM\OneToMany(targetEntity="FelhasznaloTargyEletut", mappedBy="user")
      */
     private $userFelhasznaloTargyEletut;
 
     /**
-     * @ORM\OneToMany(targetEntity="Levelkuldo", mappedBy="felhasznalo")
+     * @ORM\OneToMany(targetEntity="Levelkuldo", mappedBy="user")
      */
     private $userLevelkuldo;
 
     /**
-     * @ORM\OneToMany(targetEntity="Szakirany", mappedBy="felhasznalo")
+     * @ORM\OneToMany(targetEntity="Szakirany", mappedBy="user")
      */
     private $userSzakirany;
 
     /**
-     * @ORM\OneToMany(targetEntity="SzakdolgozatFelhasznaloKapcsolat", mappedBy="felhasznalo")
+     * @ORM\OneToMany(targetEntity="SzakdolgozatFelhasznaloKapcsolat", mappedBy="user")
      */
     private $userKapcsolat;
 
     /**
-     * @ORM\OneToMany(targetEntity="KulsoCeg", mappedBy="felhasznalo")
+     * @ORM\OneToMany(targetEntity="KulsoCeg", mappedBy="user")
      */
     private $userKulsoCeg;
 
     /**
-     * @ORM\OneToMany(targetEntity="Konzultacio", mappedBy="felhasznalo")
+     * @ORM\OneToMany(targetEntity="Konzultacio", mappedBy="user")
      */
     private $userKonzultacio;
 
     /**
-     * @ORM\OneToMany(targetEntity="Merfoldko", mappedBy="felhasznalo")
+     * @ORM\OneToMany(targetEntity="Merfoldko", mappedBy="user")
      */
     private $userMerfoldko;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Megjegyzes", mappedBy="user")
+     */
+    private $userMegjegyzes;
+
+    /**
+     * @ORM\OneToMany(targetEntity="File", mappedBy="user")
+     */
+    private $userFile;
 
     public function __construct()
     {

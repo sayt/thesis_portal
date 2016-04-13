@@ -49,13 +49,18 @@ class Konzultacio
 
     /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="userKonzultacio")
-     * @ORM\JoinColumn(name="felhasznalo", referencedColumnName="id")
+     * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
-    private $felhasznalo;
+    private $user;
 
     /**
      * @ORM\ManyToOne(targetEntity="Szakdolgozat", inversedBy="szakdolgozatKonzultacio")
      * @ORM\JoinColumn(name="szakdolgozat", referencedColumnName="id")
      */
     private $szakdolgozat;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Megjegyzes", mappedBy="konzultacio")
+     */
+    private $konzultacioMegjegyzes;
 }

@@ -34,9 +34,9 @@ class FelhasznaloTargyEletut
 
     /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="userFelhasznaloTargyEletut")
-     * @ORM\JoinColumn(name="felhasznalo", referencedColumnName="id")
+     * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
-    private $felhasznalo;
+    private $user;
 
     /**
      * @ORM\ManyToOne(targetEntity="Targy", inversedBy="targyFelhasznaloTargyEletut")

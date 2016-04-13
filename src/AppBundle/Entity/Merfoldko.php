@@ -50,7 +50,17 @@ class Merfoldko
 
     /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="userMerfoldko")
-     * @ORM\JoinColumn(name="felhasznalo", referencedColumnName="id")
+     * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
-    private $felhasznalo;
+    private $user;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Megjegyzes", mappedBy="merfoldko")
+     */
+    private $merfoldkoMegjegyzes;
+
+    /**
+     * @ORM\OneToMany(targetEntity="File", mappedBy="merfoldko")
+     */
+    private $merfoldkoFile;
 }

@@ -29,7 +29,7 @@ class Szak
 
     /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="userKulsoCeg")
-     * @ORM\JoinColumn(name="felhasznalo", referencedColumnName="id")
+     * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
-    private $felhasznalo;
+    private $user;
 }

@@ -39,9 +39,9 @@ class SzakdolgozatFelhasznaloKapcsolat
 
     /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="userKapcsolat")
-     * @ORM\JoinColumn(name="felhasznalo", referencedColumnName="id")
+     * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
-    private $felhasznalo;
+    private $user;
 
     /**
      * @ORM\ManyToOne(targetEntity="Szakdolgozat", inversedBy="szakdolgozatSzakdolgozatFelhasznaloKapcsolat")

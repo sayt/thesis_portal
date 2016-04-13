@@ -102,4 +102,14 @@ class Szakdolgozat
      * @ORM\OneToMany(targetEntity="Merfoldko", mappedBy="szakdolgozat")
      */
     private $szakdolgozatMerfoldko;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Megjegyzes", mappedBy="szakdolgozat")
+     */
+    private $szakdolgozatMegjegyzes;
+
+    /**
+     * @ORM\OneToMany(targetEntity="File", mappedBy="szakdolgozat")
+     */
+    private $szakdolgozatFile;
 }

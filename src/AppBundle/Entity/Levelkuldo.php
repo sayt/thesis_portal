@@ -39,9 +39,9 @@ class Levelkuldo
 
     /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="userLevelkuldo")
-     * @ORM\JoinColumn(name="felhasznalo", referencedColumnName="id")
+     * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
-    private $felhasznalo;
+    private $user;
 
     /**
      * @ORM\ManyToOne(targetEntity="Szakdolgozat", inversedBy="szakdolgozatLevelkuldo")
