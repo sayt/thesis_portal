@@ -1,0 +1,130 @@
+<?php
+
+namespace AppBundle\Entity\Felhasznalo;
+
+use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="user")
+ */
+class User extends BaseUser
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type="string", length=40)
+     */
+    private $hallgatoiTorzskonyviSzam;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $phoneNumber;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $emailSummary;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $emailSummaryTime;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $status;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Intezmeny\Kar", inversedBy="karUser")
+     * @ORM\JoinColumn(name="kar", referencedColumnName="id")
+     */
+    private $kar;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Role", inversedBy="roleUser")
+     * @ORM\JoinColumn(name="role", referencedColumnName="id")
+     */
+    private $role;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Intezmeny\Targy", inversedBy="targyUser")
+     * @ORM\JoinColumn(name="targy", referencedColumnName="id")
+     */
+    private $targy;
+
+    /**
+     * @ORM\OneToMany(targetEntity="FelhasznaloTargyEletut", mappedBy="user")
+     */
+    private $userFelhasznaloTargyEletut;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Levelkuldo", mappedBy="user")
+     */
+    private $userLevelkuldo;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Intezmeny\Szakirany", mappedBy="user")
+     */
+    private $userSzakirany;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Szakdolgozat\SzakdolgozatFelhasznaloKapcsolat", mappedBy="user")
+     */
+    private $userKapcsolat;
+
+    /**
+     * @ORM\OneToMany(targetEntity="KulsoCeg", mappedBy="user")
+     */
+    private $userKulsoCeg;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Szakdolgozat\Konzultacio", mappedBy="user")
+     */
+    private $userKonzultacio;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Szakdolgozat\Merfoldko", mappedBy="user")
+     */
+    private $userMerfoldko;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Szakdolgozat\Megjegyzes", mappedBy="user")
+     */
+    private $userMegjegyzes;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Szakdolgozat\File", mappedBy="user")
+     */
+    private $userFile;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Szakdolgozat\KonzultacioFelhasznalo", mappedBy="user")
+     */
+    private $userKonzultacioFelhasznalo;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Bizottsag\BizottsagTag", mappedBy="user")
+     */
+    private $userBizottsagTag;
+
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+    }
+
+}
