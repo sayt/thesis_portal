@@ -51,7 +51,7 @@ class Role
     private $szak;
 
     /**
-     * @ORM\OneToMany(targetEntity="User", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="User", mappedBy="role")
      */
     private $roleUser;
 

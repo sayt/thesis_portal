@@ -1,0 +1,11 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div id="menu">
+        {{ render(controller("AppBundle:Menu:menu"),{ 'max': 10 }) }}
+    </div>
+    <div id="login">
+        {% block login %}{% endblock %}
+    </div>
+    {% block content %}{% endblock %}
+{% endblock %}

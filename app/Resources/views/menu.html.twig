@@ -1,0 +1,5 @@
+{% for menu in menus %}
+    <a href="{{ path(menu.link) }}">
+        {{ menu.name }}
+    </a>
+{% endfor %}
