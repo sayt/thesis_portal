@@ -2,10 +2,10 @@
 
 {% block body %}
     <div id="menu">
-        {{ render(controller("AppBundle:Menu:menu"),{ 'max': 10 }) }}
+        {{ render(controller("AppBundle:Menu:menu"),{ 'max': 1 }) }}
     </div>
     <div id="login">
-        {% block login %}{% endblock %}
+        {{ render(controller("FOSUserBundle:Security:login"),{ 'max': 1 }) }}
     </div>
     {% block content %}{% endblock %}
 {% endblock %}

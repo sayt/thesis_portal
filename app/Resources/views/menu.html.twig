@@ -1,5 +1,31 @@
-{% for menu in menus %}
-    <a href="{{ path(menu.link) }}">
-        {{ menu.name }}
-    </a>
-{% endfor %}
+{% if (app.user.roles is defined) and (is_granted("ROLE_HALLGATO")) %}
+    {% for menu in menus %}
+        {% for role in menu.role %}
+            {% if role == "null" or role == "ROLE_HALLGATO "%}
+                <a href="{{ path(menu.link) }}">
+                    {{ menu.name }}
+                </a>
+            {% endif %}
+        {% endfor  %}
+    {% endfor %}
+{% elseif is_granted("ROLE_OKTATO") %}
+    {% for menu in menus %}
+        {% for role in menu.role %}
+            {% if role == "null" or role == "ROLE_OKTATO" %}
+                <a href="{{ path(menu.link) }}">
+                    {{ menu.name }}
+                </a>
+            {% endif %}
+        {% endfor  %}
+    {% endfor %}
+{% else %}
+    {% for menu in menus %}
+        {% for role in menu.role %}
+            {% if role == "null" %}
+                <a href="{{ path(menu.link) }}">
+                    {{ menu.name }}
+                </a>
+            {% endif %}
+        {% endfor  %}
+    {% endfor %}
+{% endif %}
