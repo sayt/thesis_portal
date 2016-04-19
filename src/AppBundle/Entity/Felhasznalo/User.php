@@ -81,7 +81,7 @@ class User extends BaseUser
     private $userLevelkuldo;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Intezmeny\Szakirany", mappedBy="user")
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Intezmeny\Szakirany", mappedBy="user")
      *
      * @var \Doctrine\Common\Collections\Collection $userSzakirany
      */
@@ -718,5 +718,18 @@ class User extends BaseUser
     public function getUserBizottsagTag()
     {
         return $this->userBizottsagTag;
+    }
+
+    /**
+     * Set userSzakirany
+     *
+     * @param \AppBundle\Entity\Intezmeny\Szakirany $userSzakirany
+     * @return User
+     */
+    public function setUserSzakirany(\AppBundle\Entity\Intezmeny\Szakirany $userSzakirany = null)
+    {
+        $this->userSzakirany = $userSzakirany;
+
+        return $this;
     }
 }

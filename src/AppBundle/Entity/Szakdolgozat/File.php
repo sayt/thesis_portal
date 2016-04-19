@@ -49,7 +49,7 @@ class File
     private $szakdolgozat;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Merfoldko", inversedBy="merfoldkoFiles")
+     * @ORM\ManyToOne(targetEntity="Merfoldko", inversedBy="merfoldkoFile")
      * @ORM\JoinColumn(name="merfoldko", referencedColumnName="id")
      */
     private $merfoldko;

@@ -43,7 +43,7 @@ class Targy
     private $targyUser;
 
     /**
-     * @ORM\OneToMany(targetEntity="Szakirany", mappedBy="targy")
+     * @ORM\OneToOne(targetEntity="Szakirany", mappedBy="targy")
      */
     private $targySzakirany;
 
@@ -233,5 +233,18 @@ class Targy
     public function getTargySzakirany()
     {
         return $this->targySzakirany;
+    }
+
+    /**
+     * Set targySzakirany
+     *
+     * @param \AppBundle\Entity\Intezmeny\Szakirany $targySzakirany
+     * @return Targy
+     */
+    public function setTargySzakirany(\AppBundle\Entity\Intezmeny\Szakirany $targySzakirany = null)
+    {
+        $this->targySzakirany = $targySzakirany;
+
+        return $this;
     }
 }
