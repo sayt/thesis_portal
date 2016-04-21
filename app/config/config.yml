@@ -70,9 +70,17 @@ fos_user:
     firewall_name: main
     user_class: AppBundle\Entity\Felhasznalo\User
 
+sonata_admin:
+    dashboard:
+        blocks:
+            # display a dashboard block
+            - { position: left, type: sonata.admin.block.admin_list  }
+
 sonata_block:
-    default_contexts: [cms]
+    default_contexts: [orm]
     blocks:
         # enable the SonataAdminBundle block
         sonata.admin.block.admin_list:
+            contexts: [admin]
+        sonata.admin.block.search_result:
             contexts: [admin]
