@@ -28,15 +28,15 @@ class Intezet
     private $status;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Kar", inversedBy="karIntezet")
-     * @ORM\JoinColumn(name="kar", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Szak", inversedBy="szakIntezet")
+     * @ORM\JoinColumn(name="szak", referencedColumnName="id")
      */
-    private $kar;
+    private $szak;
 
     /**
-     * @ORM\OneToMany(targetEntity="Szak", mappedBy="intezet")
+     * @ORM\OneToMany(targetEntity="Szakirany", mappedBy="intezet")
      */
-    private $intezetSzak;
+    private $intezetSzakirany;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Felhasznalo\Role", mappedBy="intezet")
@@ -48,7 +48,7 @@ class Intezet
      */
     public function __construct()
     {
-        $this->intezetSzak = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->intezetSzakirany = new \Doctrine\Common\Collections\ArrayCollection();
         $this->intezetRole = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -109,59 +109,59 @@ class Intezet
     }
 
     /**
-     * Set kar
+     * Set szak
      *
-     * @param \AppBundle\Entity\Intezmeny\Kar $kar
+     * @param \AppBundle\Entity\Intezmeny\Szak $szak
      * @return Intezet
      */
-    public function setKar(\AppBundle\Entity\Intezmeny\Kar $kar = null)
+    public function setSzak(\AppBundle\Entity\Intezmeny\Szak $szak = null)
     {
-        $this->kar = $kar;
+        $this->szak = $szak;
 
         return $this;
     }
 
     /**
-     * Get kar
+     * Get szak
      *
-     * @return \AppBundle\Entity\Intezmeny\Kar 
+     * @return \AppBundle\Entity\Intezmeny\Szak 
      */
-    public function getKar()
+    public function getSzak()
     {
-        return $this->kar;
+        return $this->szak;
     }
 
     /**
-     * Add intezetSzak
+     * Add intezetSzakirany
      *
-     * @param \AppBundle\Entity\Intezmeny\Szak $intezetSzak
+     * @param \AppBundle\Entity\Intezmeny\Szakirany $intezetSzakirany
      * @return Intezet
      */
-    public function addIntezetSzak(\AppBundle\Entity\Intezmeny\Szak $intezetSzak)
+    public function addIntezetSzakirany(\AppBundle\Entity\Intezmeny\Szakirany $intezetSzakirany)
     {
-        $this->intezetSzak[] = $intezetSzak;
+        $this->intezetSzakirany[] = $intezetSzakirany;
 
         return $this;
     }
 
     /**
-     * Remove intezetSzak
+     * Remove intezetSzakirany
      *
-     * @param \AppBundle\Entity\Intezmeny\Szak $intezetSzak
+     * @param \AppBundle\Entity\Intezmeny\Szakirany $intezetSzakirany
      */
-    public function removeIntezetSzak(\AppBundle\Entity\Intezmeny\Szak $intezetSzak)
+    public function removeIntezetSzakirany(\AppBundle\Entity\Intezmeny\Szakirany $intezetSzakirany)
     {
-        $this->intezetSzak->removeElement($intezetSzak);
+        $this->intezetSzakirany->removeElement($intezetSzakirany);
     }
 
     /**
-     * Get intezetSzak
+     * Get intezetSzakirany
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getIntezetSzak()
+    public function getIntezetSzakirany()
     {
-        return $this->intezetSzak;
+        return $this->intezetSzakirany;
     }
 
     /**

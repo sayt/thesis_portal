@@ -28,10 +28,10 @@ class Szakirany
     private $status;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Szak", inversedBy="szakSzakirany")
-     * @ORM\JoinColumn(name="szak", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Intezet", inversedBy="intezetSzakirany")
+     * @ORM\JoinColumn(name="intezet", referencedColumnName="id")
      */
-    private $szak;
+    private $intezet;
 
     /**
      * @ORM\OneToOne(targetEntity="AppBundle\Entity\Felhasznalo\User", inversedBy="userSzakirany")
@@ -103,26 +103,26 @@ class Szakirany
     }
 
     /**
-     * Set szak
+     * Set intezet
      *
-     * @param \AppBundle\Entity\Intezmeny\Szak $szak
+     * @param \AppBundle\Entity\Intezmeny\Intezet $intezet
      * @return Szakirany
      */
-    public function setSzak(\AppBundle\Entity\Intezmeny\Szak $szak = null)
+    public function setIntezet(\AppBundle\Entity\Intezmeny\Intezet $intezet = null)
     {
-        $this->szak = $szak;
+        $this->intezet = $intezet;
 
         return $this;
     }
 
     /**
-     * Get szak
+     * Get intezet
      *
-     * @return \AppBundle\Entity\Intezmeny\Szak 
+     * @return \AppBundle\Entity\Intezmeny\Intezet 
      */
-    public function getSzak()
+    public function getIntezet()
     {
-        return $this->szak;
+        return $this->intezet;
     }
 
     /**

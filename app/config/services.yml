@@ -8,7 +8,31 @@ services:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
     admin.User:
-            class: AppBundle\Admin\UserAdmin
-            arguments: [~, AppBundle\Entity\Felhasznalo\User, ~]
-            tags:
-                - { name: sonata.admin, manager_type: orm, group: user, label: User }
+          class: AppBundle\Admin\UserAdmin
+          arguments: [~, AppBundle\Entity\Felhasznalo\User, ~]
+          tags:
+            - { name: sonata.admin, manager_type: orm, group: Felhasználó, label: Felhasználók }
+
+    admin.Kar:
+          class: AppBundle\Admin\KarAdmin
+          arguments: [~, AppBundle\Entity\Intezmeny\Kar, ~]
+          tags:
+            - { name: sonata.admin, manager_type: orm, group: Intézmény, label: Kar }
+
+    admin.Szak:
+          class: AppBundle\Admin\SzakAdmin
+          arguments: [~, AppBundle\Entity\Intezmeny\Szak, ~]
+          tags:
+            - { name: sonata.admin, manager_type: orm, group: Intézmény, label: Szak }
+
+    admin.Intezet:
+          class: AppBundle\Admin\IntezetAdmin
+          arguments: [~, AppBundle\Entity\Intezmeny\Intezet, ~]
+          tags:
+            - { name: sonata.admin, manager_type: orm, group: Intézmény, label: Intézet }
+
+    admin.Szakirany:
+          class: AppBundle\Admin\SzakiranyAdmin
+          arguments: [~, AppBundle\Entity\Intezmeny\Szakirany, ~]
+          tags:
+            - { name: sonata.admin, manager_type: orm, group: Intézmény, label: Szakirány }

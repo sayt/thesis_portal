@@ -23,19 +23,14 @@ class Kar
     private $Name;
 
     /**
-     * @ORM\Column(type="string", length=100)
-     */
-    private $intezmenyName;
-
-    /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Felhasznalo\User", mappedBy="kar")
      */
     private $karUser;
 
     /**
-     * @ORM\OneToMany(targetEntity="Intezet", mappedBy="kar")
+     * @ORM\OneToMany(targetEntity="Szak", mappedBy="kar")
      */
-    private $karIntezet;
+    private $karSzak;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Felhasznalo\Role", mappedBy="kar")
@@ -48,7 +43,7 @@ class Kar
     public function __construct()
     {
         $this->karUser = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->karIntezet = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->karSzak = new \Doctrine\Common\Collections\ArrayCollection();
         $this->karRole = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -86,29 +81,6 @@ class Kar
     }
 
     /**
-     * Set intezmenyName
-     *
-     * @param string $intezmenyName
-     * @return Kar
-     */
-    public function setIntezmenyName($intezmenyName)
-    {
-        $this->intezmenyName = $intezmenyName;
-
-        return $this;
-    }
-
-    /**
-     * Get intezmenyName
-     *
-     * @return string 
-     */
-    public function getIntezmenyName()
-    {
-        return $this->intezmenyName;
-    }
-
-    /**
      * Add karUser
      *
      * @param \AppBundle\Entity\Felhasznalo\User $karUser
@@ -142,36 +114,36 @@ class Kar
     }
 
     /**
-     * Add karIntezet
+     * Add karSzak
      *
-     * @param \AppBundle\Entity\Intezmeny\Intezet $karIntezet
+     * @param \AppBundle\Entity\Intezmeny\Szak $karSzak
      * @return Kar
      */
-    public function addKarIntezet(\AppBundle\Entity\Intezmeny\Intezet $karIntezet)
+    public function addKarSzak(\AppBundle\Entity\Intezmeny\Szak $karSzak)
     {
-        $this->karIntezet[] = $karIntezet;
+        $this->karSzak[] = $karSzak;
 
         return $this;
     }
 
     /**
-     * Remove karIntezet
+     * Remove karSzak
      *
-     * @param \AppBundle\Entity\Intezmeny\Intezet $karIntezet
+     * @param \AppBundle\Entity\Intezmeny\Szak $karSzak
      */
-    public function removeKarIntezet(\AppBundle\Entity\Intezmeny\Intezet $karIntezet)
+    public function removeKarSzak(\AppBundle\Entity\Intezmeny\Szak $karSzak)
     {
-        $this->karIntezet->removeElement($karIntezet);
+        $this->karSzak->removeElement($karSzak);
     }
 
     /**
-     * Get karIntezet
+     * Get karSzak
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getKarIntezet()
+    public function getKarSzak()
     {
-        return $this->karIntezet;
+        return $this->karSzak;
     }
 
     /**
