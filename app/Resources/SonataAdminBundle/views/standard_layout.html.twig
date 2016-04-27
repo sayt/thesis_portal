@@ -19,7 +19,6 @@ file that was distributed with this source code.
 {% set _breadcrumb   = block('breadcrumb') %}
 {% set _actions      = block('actions') %}
 {% set _navbar_title = block('navbar_title') %}
-{% set menu_title = "Admin" %}
 <!DOCTYPE html>
 <html {% block html_attributes %}class="no-js"{% endblock %}>
     <head>
@@ -105,11 +104,7 @@ file that was distributed with this source code.
                             <img src="{{ asset(admin_pool.titlelogo) }}" alt="{{ admin_pool.title }}">
                         {% endif %}
                         {% if 'single_text' == admin_pool.getOption('title_mode') or 'both' == admin_pool.getOption('title_mode') %}
-                            {% if admin_pool.title == "Sonata Admin" %}
-                                <span>{{ menu_title }}</span>
-                            {% else %}
                                 <span>{{ admin_pool.title }}</span>
-                            {% endif %}
                         {% endif %}
                     </a>
                     {% endspaceless %}
@@ -166,11 +161,17 @@ file that was distributed with this source code.
                                                 <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                                             </a>
                                             <ul class="dropdown-menu dropdown-user">
+{#-------------------------------------------------------------------------------------------------#}
+                                                <li class="dropdown user-menu open">
+                                                    <a href="{{ path('homepage') }}">Főoldal
+                                                    </a>
+                                                </li>
                                                 <li class="dropdown user-menu open">
                                                     <a href="{{ path('fos_user_security_logout') }}">
                                                         {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
                                                     </a>
                                                 </li>
+{#-------------------------------------------------------------------------------------------------#}
                                                 {% include admin_pool.getTemplate('user_block') %}
                                             </ul>
                                         </li>

@@ -15,33 +15,38 @@ class Intezet
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $name;
+    protected $name;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $shortName;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $status;
+    protected $status;
 
     /**
      * @ORM\ManyToOne(targetEntity="Szak", inversedBy="szakIntezet")
      * @ORM\JoinColumn(name="szak", referencedColumnName="id")
      */
-    private $szak;
+    protected $szak;
 
     /**
      * @ORM\OneToMany(targetEntity="Szakirany", mappedBy="intezet")
      */
-    private $intezetSzakirany;
+    protected $intezetSzakirany;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Felhasznalo\Role", mappedBy="intezet")
      */
-    private $intezetRole;
+    protected $intezetRole;
 
     /**
      * Constructor
@@ -195,5 +200,28 @@ class Intezet
     public function getIntezetRole()
     {
         return $this->intezetRole;
+    }
+
+    /**
+     * Set shortName
+     *
+     * @param string $shortName
+     * @return Intezet
+     */
+    public function setShortName($shortName)
+    {
+        $this->shortName = $shortName;
+
+        return $this;
+    }
+
+    /**
+     * Get shortName
+     *
+     * @return string 
+     */
+    public function getShortName()
+    {
+        return $this->shortName;
     }
 }

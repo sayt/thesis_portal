@@ -15,54 +15,54 @@ class BizottsagErtekeles
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $irasbeliSzempontokId;
+    protected $irasbeliSzempontokId;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $irasbeliSzempontokEredmenye;
+    protected $irasbeliSzempontokEredmenye;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $szobeliSzempontokId;
+    protected $szobeliSzempontokId;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $szobeliSzempontokEredmenye;
+    protected $szobeliSzempontokEredmenye;
 
     /**
      * @ORM\Column(type="string", length=10000)
      */
-    private $description;
+    protected $description;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $teljesitett;
+    protected $teljesitett;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $status;
+    protected $status;
 
     /**
      * @ORM\ManyToOne(targetEntity="BizottsagTag", inversedBy="bizottsagTagErtekeles")
      * @ORM\JoinColumn(name="bizottsagTag", referencedColumnName="id")
      */
-    private $bizottsagTag;
+    protected $bizottsagTag;
 
     /**
      * @ORM\ManyToOne(targetEntity="BizottsagSzakdolgozat", inversedBy="bizottsagSzakdolgozatBizottsagErtekeles")
      * @ORM\JoinColumn(name="bizottsagSzakdolgozat", referencedColumnName="id")
      */
-    private $bizottsagSzakdolgozat;
+    protected $bizottsagSzakdolgozat;
 
 
     /**

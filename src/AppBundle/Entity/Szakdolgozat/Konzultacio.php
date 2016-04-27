@@ -15,59 +15,59 @@ class Konzultacio
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $name;
+    protected $name;
 
     /**
      * @ORM\Column(type="string", length=10000)
      */
-    private $description;
+    protected $description;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $datumModositas;
+    protected $datumModositas;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private $veglegesDatum;
+    protected $veglegesDatum;
 
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $allapot;
+    protected $allapot;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $status;
+    protected $status;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Felhasznalo\User", inversedBy="userKonzultacio")
      * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
-    private $user;
+    protected $user;
 
     /**
      * @ORM\ManyToOne(targetEntity="Szakdolgozat", inversedBy="szakdolgozatKonzultacio")
      * @ORM\JoinColumn(name="szakdolgozat", referencedColumnName="id")
      */
-    private $szakdolgozat;
+    protected $szakdolgozat;
 
     /**
      * @ORM\OneToMany(targetEntity="Megjegyzes", mappedBy="konzultacio")
      */
-    private $konzultacioMegjegyzes;
+    protected $konzultacioMegjegyzes;
 
     /**
      * @ORM\OneToMany(targetEntity="KonzultacioFelhasznalo", mappedBy="konzultacio")
      */
-    private $konzultacioKonzultacioFelhasznalo;
+    protected $konzultacioKonzultacioFelhasznalo;
 
     /**
      * Constructor

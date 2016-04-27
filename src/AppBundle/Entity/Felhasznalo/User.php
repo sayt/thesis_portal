@@ -21,134 +21,154 @@ class User extends BaseUser
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $name;
+    protected $name;
 
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $hallgatoiTorzskonyviSzam;
+    protected $hallgatoiTorzskonyviSzam;
 
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $phoneNumber;
+    protected $phoneNumber;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $emailSummary;
+    protected $emailSummary;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private $emailSummaryTime;
+    protected $emailSummaryTime;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $status;
+    protected $status;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Intezmeny\Kar", inversedBy="karUser")
      * @ORM\JoinColumn(name="kar", referencedColumnName="id")
      */
-    private $kar;
+    protected $kar;
 
     /**
      * @ORM\ManyToOne(targetEntity="Role", inversedBy="roleUser")
      * @ORM\JoinColumn(name="role", referencedColumnName="id")
      */
-    private $role;
+    protected $role;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Intezmeny\Targy", inversedBy="targyUser")
      * @ORM\JoinColumn(name="targy", referencedColumnName="id")
      */
-    private $targy;
+    protected $targy;
 
     /**
      * @ORM\OneToMany(targetEntity="FelhasznaloTargyEletut", mappedBy="user")
      *
      * @var \Doctrine\Common\Collections\Collection $userFelhasznaloTargyEletut
      */
-    private $userFelhasznaloTargyEletut;
+    protected $userFelhasznaloTargyEletut;
 
     /**
      * @ORM\OneToMany(targetEntity="Levelkuldo", mappedBy="user")
      *
      * @var \Doctrine\Common\Collections\Collection $userLevelkuldo
      */
-    private $userLevelkuldo;
+    protected $userLevelkuldo;
 
     /**
      * @ORM\OneToOne(targetEntity="AppBundle\Entity\Intezmeny\Szakirany", mappedBy="user")
      *
      * @var \Doctrine\Common\Collections\Collection $userSzakirany
      */
-    private $userSzakirany;
+    protected $userSzakirany;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Szakdolgozat\SzakdolgozatFelhasznaloKapcsolat", mappedBy="user")
      *
      * @var \Doctrine\Common\Collections\Collection $userKapcsolat
      */
-    private $userKapcsolat;
+    protected $userKapcsolat;
 
     /**
      * @ORM\OneToMany(targetEntity="KulsoCeg", mappedBy="user")
      *
      * @var \Doctrine\Common\Collections\Collection $userKulsoCeg
      */
-    private $userKulsoCeg;
+    protected $userKulsoCeg;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Szakdolgozat\Konzultacio", mappedBy="user")
      *
      * @var \Doctrine\Common\Collections\Collection $userKonzultacio
      */
-    private $userKonzultacio;
+    protected $userKonzultacio;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Szakdolgozat\Merfoldko", mappedBy="user")
      *
      * @var \Doctrine\Common\Collections\Collection $userMerfoldko
      */
-    private $userMerfoldko;
+    protected $userMerfoldko;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Szakdolgozat\Megjegyzes", mappedBy="user")
      *
      * @var \Doctrine\Common\Collections\Collection $userMegjegyzes
      */
-    private $userMegjegyzes;
+    protected $userMegjegyzes;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Szakdolgozat\File", mappedBy="user")
      *
      * @var \Doctrine\Common\Collections\Collection $userFile
      */
-    private $userFile;
+    protected $userFile;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Szakdolgozat\KonzultacioFelhasznalo", mappedBy="user")
      *
      * @var \Doctrine\Common\Collections\Collection $userKonzultacioFelhasznalo
      */
-    private $userKonzultacioFelhasznalo;
+    protected $userKonzultacioFelhasznalo;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Bizottsag\BizottsagTag", mappedBy="user")
      *
      * @var \Doctrine\Common\Collections\Collection $userBizottsagTag
      */
-    private $userBizottsagTag;
+    protected $userBizottsagTag;
+
+    /**
+     * @ORM\OneToMany(targetEntity="UserRoleConnect", mappedBy="user")
+     *
+     * @var \Doctrine\Common\Collections\Collection $userUserRoleConnect
+     */
+    protected $userUserRoleConnect;
+
+    /**
+     * @ORM\OneToMany(targetEntity="UserRoleConnect", mappedBy="modositoUser")
+     *
+     * @var \Doctrine\Common\Collections\Collection $userUserRoleConnectmodositoUser
+     */
+    protected $userUserRoleConnectmodositoUser;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Intezmeny\TargySorrend", mappedBy="modositoUser")
+     *
+     * @var \Doctrine\Common\Collections\Collection $userTargySorrendmodositoUser
+     */
+    protected $userTargySorrendmodositoUser;
 
     public function __construct()
     {
         parent::__construct();
         // your own logic
     }
-
 
     /**
      * Set name
@@ -424,32 +444,22 @@ class User extends BaseUser
     }
 
     /**
-     * Add userSzakirany
+     * Set userSzakirany
      *
      * @param \AppBundle\Entity\Intezmeny\Szakirany $userSzakirany
      * @return User
      */
-    public function addUserSzakirany(\AppBundle\Entity\Intezmeny\Szakirany $userSzakirany)
+    public function setUserSzakirany(\AppBundle\Entity\Intezmeny\Szakirany $userSzakirany = null)
     {
-        $this->userSzakirany[] = $userSzakirany;
+        $this->userSzakirany = $userSzakirany;
 
         return $this;
     }
 
     /**
-     * Remove userSzakirany
-     *
-     * @param \AppBundle\Entity\Intezmeny\Szakirany $userSzakirany
-     */
-    public function removeUserSzakirany(\AppBundle\Entity\Intezmeny\Szakirany $userSzakirany)
-    {
-        $this->userSzakirany->removeElement($userSzakirany);
-    }
-
-    /**
      * Get userSzakirany
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \AppBundle\Entity\Intezmeny\Szakirany 
      */
     public function getUserSzakirany()
     {
@@ -721,15 +731,101 @@ class User extends BaseUser
     }
 
     /**
-     * Set userSzakirany
+     * Add userUserRoleConnect
      *
-     * @param \AppBundle\Entity\Intezmeny\Szakirany $userSzakirany
+     * @param \AppBundle\Entity\Felhasznalo\UserRoleConnect $userUserRoleConnect
      * @return User
      */
-    public function setUserSzakirany(\AppBundle\Entity\Intezmeny\Szakirany $userSzakirany = null)
+    public function addUserUserRoleConnect(\AppBundle\Entity\Felhasznalo\UserRoleConnect $userUserRoleConnect)
     {
-        $this->userSzakirany = $userSzakirany;
+        $this->userUserRoleConnect[] = $userUserRoleConnect;
 
         return $this;
+    }
+
+    /**
+     * Remove userUserRoleConnect
+     *
+     * @param \AppBundle\Entity\Felhasznalo\UserRoleConnect $userUserRoleConnect
+     */
+    public function removeUserUserRoleConnect(\AppBundle\Entity\Felhasznalo\UserRoleConnect $userUserRoleConnect)
+    {
+        $this->userUserRoleConnect->removeElement($userUserRoleConnect);
+    }
+
+    /**
+     * Get userUserRoleConnect
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUserUserRoleConnect()
+    {
+        return $this->userUserRoleConnect;
+    }
+
+    /**
+     * Add userUserRoleConnectmodositoUser
+     *
+     * @param \AppBundle\Entity\Felhasznalo\UserRoleConnect $userUserRoleConnectmodositoUser
+     * @return User
+     */
+    public function addUserUserRoleConnectmodositoUser(\AppBundle\Entity\Felhasznalo\UserRoleConnect $userUserRoleConnectmodositoUser)
+    {
+        $this->userUserRoleConnectmodositoUser[] = $userUserRoleConnectmodositoUser;
+
+        return $this;
+    }
+
+    /**
+     * Remove userUserRoleConnectmodositoUser
+     *
+     * @param \AppBundle\Entity\Felhasznalo\UserRoleConnect $userUserRoleConnectmodositoUser
+     */
+    public function removeUserUserRoleConnectmodositoUser(\AppBundle\Entity\Felhasznalo\UserRoleConnect $userUserRoleConnectmodositoUser)
+    {
+        $this->userUserRoleConnectmodositoUser->removeElement($userUserRoleConnectmodositoUser);
+    }
+
+    /**
+     * Get userUserRoleConnectmodositoUser
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUserUserRoleConnectmodositoUser()
+    {
+        return $this->userUserRoleConnectmodositoUser;
+    }
+
+    /**
+     * Add userTargySorrendmodositoUser
+     *
+     * @param \AppBundle\Entity\Intezmeny\TargySorrend $userTargySorrendmodositoUser
+     * @return User
+     */
+    public function addUserTargySorrendmodositoUser(\AppBundle\Entity\Intezmeny\TargySorrend $userTargySorrendmodositoUser)
+    {
+        $this->userTargySorrendmodositoUser[] = $userTargySorrendmodositoUser;
+
+        return $this;
+    }
+
+    /**
+     * Remove userTargySorrendmodositoUser
+     *
+     * @param \AppBundle\Entity\Intezmeny\TargySorrend $userTargySorrendmodositoUser
+     */
+    public function removeUserTargySorrendmodositoUser(\AppBundle\Entity\Intezmeny\TargySorrend $userTargySorrendmodositoUser)
+    {
+        $this->userTargySorrendmodositoUser->removeElement($userTargySorrendmodositoUser);
+    }
+
+    /**
+     * Get userTargySorrendmodositoUser
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUserTargySorrendmodositoUser()
+    {
+        return $this->userTargySorrendmodositoUser;
     }
 }

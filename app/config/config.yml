@@ -71,6 +71,7 @@ fos_user:
     user_class: AppBundle\Entity\Felhasznalo\User
 
 sonata_admin:
+    title:      Admin
     dashboard:
         blocks:
             # display a dashboard block

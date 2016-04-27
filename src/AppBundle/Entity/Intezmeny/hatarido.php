@@ -1,14 +1,14 @@
 <?php
 
-namespace AppBundle\Entity\Bizottsag;
+namespace AppBundle\Entity\Intezmeny;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="ertekelesSzempontok")
+ * @ORM\Table(name="hatarido")
  */
-class ErtekelesSzempontok
+class Hatarido
 {
     /**
      * @ORM\Id
@@ -18,19 +18,24 @@ class ErtekelesSzempontok
     protected $id;
 
     /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $name;
+
+    /**
      * @ORM\Column(type="string", length=10000)
      */
     protected $description;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="datetime")
      */
-    protected $tipus;
+    protected $kezdete;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="datetime")
      */
-    protected $allapot;
+    protected $vege;
 
     /**
      * @ORM\Column(type="boolean")
@@ -49,10 +54,33 @@ class ErtekelesSzempontok
     }
 
     /**
+     * Set name
+     *
+     * @param string $name
+     * @return Hatarido
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
      * Set description
      *
      * @param string $description
-     * @return ErtekelesSzempontok
+     * @return Hatarido
      */
     public function setDescription($description)
     {
@@ -72,56 +100,56 @@ class ErtekelesSzempontok
     }
 
     /**
-     * Set tipus
+     * Set kezdete
      *
-     * @param boolean $tipus
-     * @return ErtekelesSzempontok
+     * @param \DateTime $kezdete
+     * @return Hatarido
      */
-    public function setTipus($tipus)
+    public function setKezdete($kezdete)
     {
-        $this->tipus = $tipus;
+        $this->kezdete = $kezdete;
 
         return $this;
     }
 
     /**
-     * Get tipus
+     * Get kezdete
      *
-     * @return boolean 
+     * @return \DateTime 
      */
-    public function getTipus()
+    public function getKezdete()
     {
-        return $this->tipus;
+        return $this->kezdete;
     }
 
     /**
-     * Set allapot
+     * Set vege
      *
-     * @param boolean $allapot
-     * @return ErtekelesSzempontok
+     * @param \DateTime $vege
+     * @return Hatarido
      */
-    public function setAllapot($allapot)
+    public function setVege($vege)
     {
-        $this->allapot = $allapot;
+        $this->vege = $vege;
 
         return $this;
     }
 
     /**
-     * Get allapot
+     * Get vege
      *
-     * @return boolean 
+     * @return \DateTime 
      */
-    public function getAllapot()
+    public function getVege()
     {
-        return $this->allapot;
+        return $this->vege;
     }
 
     /**
      * Set status
      *
      * @param boolean $status
-     * @return ErtekelesSzempontok
+     * @return Hatarido
      */
     public function setStatus($status)
     {

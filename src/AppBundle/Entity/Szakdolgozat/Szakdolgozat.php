@@ -15,113 +15,113 @@ class Szakdolgozat
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $hunName;
+    protected $hunName;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $engName;
+    protected $engName;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $hallgatoSzam;
+    protected $hallgatoSzam;
 
     /**
      * @ORM\Column(type="string", length=5000)
      */
-    private $description;
+    protected $description;
 
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $kiirasEve;
+    protected $kiirasEve;
 
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $language;
+    protected $language;
 
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $allapot;
+    protected $allapot;
 
     /**
      * @ORM\Column(type="date")
      */
-    private $beadasHatarido;
+    protected $beadasHatarido;
 
     /**
      * @ORM\Column(type="string", length=10000)
      */
-    private $feladat;
+    protected $feladat;
 
     /**
      * @ORM\Column(type="string", length=5000)
      */
-    private $tartalmazniaKell;
+    protected $tartalmazniaKell;
 
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $vegeredmeny;
+    protected $vegeredmeny;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $titkos;
+    protected $titkos;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $status;
+    protected $status;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Intezmeny\Szak", inversedBy="szakSzakdolgozat")
      * @ORM\JoinColumn(name="szak", referencedColumnName="id")
      */
-    private $szak;
+    protected $szak;
 
     /**
      * @ORM\OneToMany(targetEntity="SzakdolgozatFelhasznaloKapcsolat", mappedBy="szakdolgozat")
      */
-    private $szakdolgozatSzakdolgozatFelhasznaloKapcsolat;
+    protected $szakdolgozatSzakdolgozatFelhasznaloKapcsolat;
 
     /**
      * @ORM\OneToMany(targetEntity="Konzultacio", mappedBy="szakdolgozat")
      */
-    private $szakdolgozatKonzultacio;
+    protected $szakdolgozatKonzultacio;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Felhasznalo\Levelkuldo", mappedBy="szakdolgozat")
      */
-    private $szakdolgozatLevelkuldo;
+    protected $szakdolgozatLevelkuldo;
 
     /**
      * @ORM\OneToMany(targetEntity="Merfoldko", mappedBy="szakdolgozat")
      */
-    private $szakdolgozatMerfoldko;
+    protected $szakdolgozatMerfoldko;
 
     /**
      * @ORM\OneToMany(targetEntity="Megjegyzes", mappedBy="szakdolgozat")
      */
-    private $szakdolgozatMegjegyzes;
+    protected $szakdolgozatMegjegyzes;
 
     /**
      * @ORM\OneToMany(targetEntity="File", mappedBy="szakdolgozat")
      */
-    private $szakdolgozatFile;
+    protected $szakdolgozatFile;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Bizottsag\BizottsagSzakdolgozat", mappedBy="szakdolgozat")
      */
-    private $szakdolgozatBizottsagSzakdolgozat;
+    protected $szakdolgozatBizottsagSzakdolgozat;
 
     /**
      * Constructor

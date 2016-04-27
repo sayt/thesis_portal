@@ -15,54 +15,54 @@ class Merfoldko
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $name;
+    protected $name;
 
     /**
      * @ORM\Column(type="string", length=10000)
      */
-    private $description;
+    protected $description;
 
     /**
      * @ORM\Column(type="date")
      */
-    private $teljesitesiHatarido;
+    protected $teljesitesiHatarido;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $beadasra;
+    protected $beadasra;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $status;
+    protected $status;
 
     /**
      * @ORM\ManyToOne(targetEntity="Szakdolgozat", inversedBy="szakdolgozatMerfoldko")
      * @ORM\JoinColumn(name="szakdolgozat", referencedColumnName="id")
      */
-    private $szakdolgozat;
+    protected $szakdolgozat;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Felhasznalo\User", inversedBy="userMerfoldko")
      * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
-    private $user;
+    protected $user;
 
     /**
      * @ORM\OneToMany(targetEntity="Megjegyzes", mappedBy="merfoldko")
      */
-    private $merfoldkoMegjegyzes;
+    protected $merfoldkoMegjegyzes;
 
     /**
      * @ORM\OneToMany(targetEntity="File", mappedBy="merfoldko")
      */
-    private $merfoldkoFile;
+    protected $merfoldkoFile;
 
     /**
      * Constructor

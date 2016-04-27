@@ -13,7 +13,22 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $description = "Itt lesz majd egyszer egy leírás ami egy viszonylag hosszú szöveg";
+        $links = array(
+            array(
+                "name" => "doksi1",
+                "link" => "homepage"
+            ),
+            array(
+                "name" => "doksi2",
+                "link" => "homepage"
+            ),
+        );
+
         // replace this example code with whatever you need
-        return $this->render('index.html.twig');
+        return $this->render('index.html.twig', array(
+            "description" => $description,
+            "links" => $links
+        ));
     }
 }

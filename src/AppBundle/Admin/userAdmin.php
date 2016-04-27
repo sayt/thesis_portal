@@ -39,6 +39,7 @@ class UserAdmin extends Admin
                 "class" => 'AppBundle\Entity\Felhasznalo\Role',
                 "property" => "name",
             ))
+            ->add("roles")
         ;
     }
 

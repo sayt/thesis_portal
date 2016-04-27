@@ -9,19 +9,30 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Doctrine\ORM\EntityRepository;
 
 class SzakiranyAdmin extends Admin
 {
+
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add("name", TextType::class, array("translation_domain" => "User" ))
+            ->add("name", TextType::class, array("translation_domain" => "User"))
             ->add("intezet", null, array(
                 "class" => 'AppBundle\Entity\Intezmeny\Intezet',
                 "property" => "name",
             ))
-            ->add("user", 'sonata_type_model_autocomplete', array(
+            ->add("user", EntityType::class, array(
+                "class" => 'AppBundle\Entity\Felhasznalo\User',
                 "property" => "name",
+                'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('u')
+                        ->innerJoin('u.role', 'r')
+                        ->andWhere('r.name LIKE :oktato')
+                        ->setParameter('oktato', 'oktató')
+                    ;
+                }
             ))
             ->add("targy", null, array(
                 "class" => 'AppBundle\Entity\Intezmeny\Targy',
@@ -29,29 +40,28 @@ class SzakiranyAdmin extends Admin
             ))
             ->add("status", ChoiceType::class, array(
                 "translation_domain" => "User",
-                "choices"  => array(
+                "choices" => array(
                     true => "Aktív",
                     false => "Passiv",
                 ),
-            ))
-        ;
+            ));
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add("name")
-        ;
+            ->add("name");
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add("intezet.szak.kar.name", null, array( "label" => "Kar"))
-            ->add("intezet.szak.name", null, array( "label" => "Szak"))
-            ->add("intezet.name", null, array( "label" => "Intézet"))
-            ->addIdentifier("name", null, array( "label" => "Szakirány"))
-        ;
+            ->add("intezet.szak.kar.name", null, array("label" => "Kar"))
+            ->add("intezet.szak.name", null, array("label" => "Szak"))
+            ->add("intezet.name", null, array("label" => "Intézet"))
+            ->addIdentifier("name", null, array("label" => "Szakirány"))
+            ->add("user.name")
+            ;
     }
 
     public function toString($object)

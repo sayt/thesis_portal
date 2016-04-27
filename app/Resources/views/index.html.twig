@@ -1,5 +1,14 @@
 {% extends '::layout.html.twig' %}
 
 {% block content %}
-    dsafsa
+    <div id="description">
+        {{ description }}
+    </div>
+    <div id="links">
+        {% for link in links %}
+            <a href="{{ path(link.link) }}">
+                {{ link.name }}
+            </a><br />
+        {% endfor %}
+    </div>
 {% endblock %}

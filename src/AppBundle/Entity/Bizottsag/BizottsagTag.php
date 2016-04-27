@@ -15,39 +15,39 @@ class BizottsagTag
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $elnok;
+    protected $elnok;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $elfogadta;
+    protected $elfogadta;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $status;
+    protected $status;
 
     /**
      * @ORM\ManyToOne(targetEntity="Bizottsag", inversedBy="bizottsagBizottsagTag")
      * @ORM\JoinColumn(name="bizottsag", referencedColumnName="id")
      */
-    private $bizottsag;
+    protected $bizottsag;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Felhasznalo\User", inversedBy="userBizottsagTag")
      * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
-    private $user;
+    protected $user;
 
     /**
      * @ORM\OneToMany(targetEntity="BizottsagErtekeles", mappedBy="bizottsagTag")
      */
-    private $bizottsagTagErtekeles;
+    protected $bizottsagTagErtekeles;
 
     /**
      * Constructor

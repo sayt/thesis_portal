@@ -15,23 +15,23 @@ class KulsoCeg
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $name;
+    protected $name;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $status;
+    protected $status;
 
     /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="userKulsoCeg")
      * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
-    private $user;
+    protected $user;
 
 
     /**

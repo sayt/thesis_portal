@@ -15,38 +15,48 @@ class Szak
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $name;
+    protected $name;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $shortName;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $status;
+    protected $status;
 
     /**
      * @ORM\ManyToOne(targetEntity="Kar", inversedBy="karSzak")
      * @ORM\JoinColumn(name="kar", referencedColumnName="id")
      */
-    private $kar;
+    protected $kar;
 
     /**
      * @ORM\OneToMany(targetEntity="Intezet", mappedBy="szak")
      */
-    private $szakIntezet;
+    protected $szakIntezet;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Felhasznalo\Role", mappedBy="szak")
      */
-    private $szakRole;
+    protected $szakRole;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Szakdolgozat\Szakdolgozat", mappedBy="szak")
      */
-    private $szakSzakdolgozat;
+    protected $szakSzakdolgozat;
+
+    /**
+     * @ORM\OneToMany(targetEntity="TargySorrend", mappedBy="szak")
+     */
+    protected $szakTargySorrend;
 
     /**
      * Constructor
@@ -234,5 +244,61 @@ class Szak
     public function getSzakSzakdolgozat()
     {
         return $this->szakSzakdolgozat;
+    }
+
+    /**
+     * Set shortName
+     *
+     * @param string $shortName
+     * @return Szak
+     */
+    public function setShortName($shortName)
+    {
+        $this->shortName = $shortName;
+
+        return $this;
+    }
+
+    /**
+     * Get shortName
+     *
+     * @return string 
+     */
+    public function getShortName()
+    {
+        return $this->shortName;
+    }
+
+    /**
+     * Add szakTargySorrend
+     *
+     * @param \AppBundle\Entity\Intezmeny\TargySorrend $szakTargySorrend
+     * @return Szak
+     */
+    public function addSzakTargySorrend(\AppBundle\Entity\Intezmeny\TargySorrend $szakTargySorrend)
+    {
+        $this->szakTargySorrend[] = $szakTargySorrend;
+
+        return $this;
+    }
+
+    /**
+     * Remove szakTargySorrend
+     *
+     * @param \AppBundle\Entity\Intezmeny\TargySorrend $szakTargySorrend
+     */
+    public function removeSzakTargySorrend(\AppBundle\Entity\Intezmeny\TargySorrend $szakTargySorrend)
+    {
+        $this->szakTargySorrend->removeElement($szakTargySorrend);
+    }
+
+    /**
+     * Get szakTargySorrend
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSzakTargySorrend()
+    {
+        return $this->szakTargySorrend;
     }
 }

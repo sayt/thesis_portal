@@ -15,34 +15,34 @@ class FelhasznaloTargyEletut
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $felvetelIdeje;
+    protected $felvetelIdeje;
 
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $allapot;
+    protected $allapot;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $status;
+    protected $status;
 
     /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="userFelhasznaloTargyEletut")
      * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
-    private $user;
+    protected $user;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Intezmeny\Targy", inversedBy="targyFelhasznaloTargyEletut")
      * @ORM\JoinColumn(name="targy", referencedColumnName="id")
      */
-    private $targy;
+    protected $targy;
 
 
     /**

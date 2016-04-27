@@ -15,47 +15,47 @@ class Bizottsag
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $name;
+    protected $name;
 
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $felevName;
+    protected $felevName;
 
     /**
      * @ORM\Column(type="string", length=10000)
      */
-    private $description;
+    protected $description;
 
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $allapot;
+    protected $allapot;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $publikus;
+    protected $publikus;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $status;
+    protected $status;
 
     /**
      * @ORM\OneToMany(targetEntity="BizottsagTag", mappedBy="bizottsag")
      */
-    private $bizottsagBizottsagTag;
+    protected $bizottsagBizottsagTag;
 
     /**
      * @ORM\OneToMany(targetEntity="BizottsagSzakdolgozat", mappedBy="bizottsag")
      */
-    private $bizottsagBizottsagSzakdolgozat;
+    protected $bizottsagBizottsagSzakdolgozat;
 
     /**
      * Constructor

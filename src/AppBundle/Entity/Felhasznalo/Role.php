@@ -15,45 +15,50 @@ class Role
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $name;
+    protected $name;
 
     /**
      * @ORM\Column(type="string", length=10000)
      */
-    private $description;
+    protected $description;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $status;
+    protected $status;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Intezmeny\Kar", inversedBy="karRole")
      * @ORM\JoinColumn(name="kar", referencedColumnName="id")
      */
-    private $kar;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Intezmeny\Intezet", inversedBy="intezetRole")
-     * @ORM\JoinColumn(name="intezet", referencedColumnName="id")
-     */
-    private $intezet;
+    protected $kar;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Intezmeny\Szak", inversedBy="szakRole")
      * @ORM\JoinColumn(name="szak", referencedColumnName="id")
      */
-    private $szak;
+    protected $szak;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Intezmeny\Intezet", inversedBy="intezetRole")
+     * @ORM\JoinColumn(name="intezet", referencedColumnName="id")
+     */
+    protected $intezet;
 
     /**
      * @ORM\OneToMany(targetEntity="User", mappedBy="role")
      */
-    private $roleUser;
+    protected $roleUser;
+
+    /**
+     * @ORM\OneToMany(targetEntity="UserRoleConnect", mappedBy="role")
+     */
+    protected $roleUserRoleConnect;
 
     /**
      * Constructor
@@ -242,5 +247,38 @@ class Role
     public function getRoleUser()
     {
         return $this->roleUser;
+    }
+
+    /**
+     * Add roleUserRoleConnect
+     *
+     * @param \AppBundle\Entity\Felhasznalo\UserRoleConnect $roleUserRoleConnect
+     * @return Role
+     */
+    public function addRoleUserRoleConnect(\AppBundle\Entity\Felhasznalo\UserRoleConnect $roleUserRoleConnect)
+    {
+        $this->roleUserRoleConnect[] = $roleUserRoleConnect;
+
+        return $this;
+    }
+
+    /**
+     * Remove roleUserRoleConnect
+     *
+     * @param \AppBundle\Entity\Felhasznalo\UserRoleConnect $roleUserRoleConnect
+     */
+    public function removeRoleUserRoleConnect(\AppBundle\Entity\Felhasznalo\UserRoleConnect $roleUserRoleConnect)
+    {
+        $this->roleUserRoleConnect->removeElement($roleUserRoleConnect);
+    }
+
+    /**
+     * Get roleUserRoleConnect
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRoleUserRoleConnect()
+    {
+        return $this->roleUserRoleConnect;
     }
 }

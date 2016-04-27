@@ -15,50 +15,50 @@ class File
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $name;
+    protected $name;
 
     /**
      * @ORM\Column(type="string", length=1000)
      */
-    private $location;
+    protected $location;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $fileSzam;
+    protected $fileSzam;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private $datum;
+    protected $datum;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $status;
+    protected $status;
 
     /**
      * @ORM\ManyToOne(targetEntity="Szakdolgozat", inversedBy="szakdolgozatFile")
      * @ORM\JoinColumn(name="szakdolgozat", referencedColumnName="id")
      */
-    private $szakdolgozat;
+    protected $szakdolgozat;
 
     /**
      * @ORM\ManyToOne(targetEntity="Merfoldko", inversedBy="merfoldkoFile")
      * @ORM\JoinColumn(name="merfoldko", referencedColumnName="id")
      */
-    private $merfoldko;
+    protected $merfoldko;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Felhasznalo\User", inversedBy="userFile")
      * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
-    private $user;
+    protected $user;
 
 
     /**

@@ -60,14 +60,19 @@ class MenuController extends Controller
                 "role" => array("ROLE_OKTATO")
             ),
             array(
-                "name" => "Szakdolgozat",
-                "link" => "homepage",
+                "name" => "Szakdolgozatok",
+                "link" => "thesis_show",
                 "role" => array("null")
             ),
             array(
                 "name" => "Dokumentáció",
                 "link" => "homepage",
                 "role" => array("null")
+            ),
+            array(
+                "name" => "Admin",
+                "link" => "sonata_admin_dashboard",
+                "role" => array("ROLE_ADMIN")
             ),
         );
         return $this->render("menu.html.twig", array(

@@ -15,37 +15,57 @@ class Targy
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $name;
+    protected $name;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $targykod;
 
     /**
      * @ORM\Column(type="string", length=10000)
      */
-    private $description;
+    protected $description;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $status;
+    protected $status;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Felhasznalo\FelhasznaloTargyEletut", mappedBy="targy")
      */
-    private $targyFelhasznaloTargyEletut;
+    protected $targyFelhasznaloTargyEletut;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Felhasznalo\User", mappedBy="targy")
      */
-    private $targyUser;
+    protected $targyUser;
 
     /**
      * @ORM\OneToOne(targetEntity="Szakirany", mappedBy="targy")
      */
-    private $targySzakirany;
+    protected $targySzakirany;
+
+    /**
+     * @ORM\OneToMany(targetEntity="TargySorrend", mappedBy="targy")
+     */
+    protected $targyTargySorrend;
+
+    /**
+     * @ORM\OneToMany(targetEntity="TargySorrend", mappedBy="elozotargy")
+     */
+    protected $targyTargySorrendelozo;
+
+    /**
+     * @ORM\OneToMany(targetEntity="TargySorrend", mappedBy="kovetkezotargy")
+     */
+    protected $targyTargySorrendkovetkezo;
 
     /**
      * Constructor
@@ -246,5 +266,127 @@ class Targy
         $this->targySzakirany = $targySzakirany;
 
         return $this;
+    }
+
+    /**
+     * Set targykod
+     *
+     * @param string $targykod
+     * @return Targy
+     */
+    public function setTargykod($targykod)
+    {
+        $this->targykod = $targykod;
+
+        return $this;
+    }
+
+    /**
+     * Get targykod
+     *
+     * @return string 
+     */
+    public function getTargykod()
+    {
+        return $this->targykod;
+    }
+
+    /**
+     * Add targyTargySorrend
+     *
+     * @param \AppBundle\Entity\Intezmeny\TargySorrend $targyTargySorrend
+     * @return Targy
+     */
+    public function addTargyTargySorrend(\AppBundle\Entity\Intezmeny\TargySorrend $targyTargySorrend)
+    {
+        $this->targyTargySorrend[] = $targyTargySorrend;
+
+        return $this;
+    }
+
+    /**
+     * Remove targyTargySorrend
+     *
+     * @param \AppBundle\Entity\Intezmeny\TargySorrend $targyTargySorrend
+     */
+    public function removeTargyTargySorrend(\AppBundle\Entity\Intezmeny\TargySorrend $targyTargySorrend)
+    {
+        $this->targyTargySorrend->removeElement($targyTargySorrend);
+    }
+
+    /**
+     * Get targyTargySorrend
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTargyTargySorrend()
+    {
+        return $this->targyTargySorrend;
+    }
+
+    /**
+     * Add targyTargySorrendelozo
+     *
+     * @param \AppBundle\Entity\Intezmeny\TargySorrend $targyTargySorrendelozo
+     * @return Targy
+     */
+    public function addTargyTargySorrendelozo(\AppBundle\Entity\Intezmeny\TargySorrend $targyTargySorrendelozo)
+    {
+        $this->targyTargySorrendelozo[] = $targyTargySorrendelozo;
+
+        return $this;
+    }
+
+    /**
+     * Remove targyTargySorrendelozo
+     *
+     * @param \AppBundle\Entity\Intezmeny\TargySorrend $targyTargySorrendelozo
+     */
+    public function removeTargyTargySorrendelozo(\AppBundle\Entity\Intezmeny\TargySorrend $targyTargySorrendelozo)
+    {
+        $this->targyTargySorrendelozo->removeElement($targyTargySorrendelozo);
+    }
+
+    /**
+     * Get targyTargySorrendelozo
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTargyTargySorrendelozo()
+    {
+        return $this->targyTargySorrendelozo;
+    }
+
+    /**
+     * Add targyTargySorrendkovetkezo
+     *
+     * @param \AppBundle\Entity\Intezmeny\TargySorrend $targyTargySorrendkovetkezo
+     * @return Targy
+     */
+    public function addTargyTargySorrendkovetkezo(\AppBundle\Entity\Intezmeny\TargySorrend $targyTargySorrendkovetkezo)
+    {
+        $this->targyTargySorrendkovetkezo[] = $targyTargySorrendkovetkezo;
+
+        return $this;
+    }
+
+    /**
+     * Remove targyTargySorrendkovetkezo
+     *
+     * @param \AppBundle\Entity\Intezmeny\TargySorrend $targyTargySorrendkovetkezo
+     */
+    public function removeTargyTargySorrendkovetkezo(\AppBundle\Entity\Intezmeny\TargySorrend $targyTargySorrendkovetkezo)
+    {
+        $this->targyTargySorrendkovetkezo->removeElement($targyTargySorrendkovetkezo);
+    }
+
+    /**
+     * Get targyTargySorrendkovetkezo
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTargyTargySorrendkovetkezo()
+    {
+        return $this->targyTargySorrendkovetkezo;
     }
 }

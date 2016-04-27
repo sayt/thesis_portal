@@ -15,35 +15,40 @@ class Szakirany
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $name;
+    protected $name;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $shortName;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $status;
+    protected $status;
 
     /**
      * @ORM\ManyToOne(targetEntity="Intezet", inversedBy="intezetSzakirany")
      * @ORM\JoinColumn(name="intezet", referencedColumnName="id")
      */
-    private $intezet;
+    protected $intezet;
 
     /**
      * @ORM\OneToOne(targetEntity="AppBundle\Entity\Felhasznalo\User", inversedBy="userSzakirany")
      * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
-    private $user;
+    protected $user;
 
     /**
      * @ORM\OneToOne(targetEntity="Targy", inversedBy="targySzakirany")
      * @ORM\JoinColumn(name="targy", referencedColumnName="id")
      */
-    private $targy;
+    protected $targy;
 
 
     /**
@@ -169,5 +174,28 @@ class Szakirany
     public function getTargy()
     {
         return $this->targy;
+    }
+
+    /**
+     * Set shortName
+     *
+     * @param string $shortName
+     * @return Szakirany
+     */
+    public function setShortName($shortName)
+    {
+        $this->shortName = $shortName;
+
+        return $this;
+    }
+
+    /**
+     * Get shortName
+     *
+     * @return string 
+     */
+    public function getShortName()
+    {
+        return $this->shortName;
     }
 }

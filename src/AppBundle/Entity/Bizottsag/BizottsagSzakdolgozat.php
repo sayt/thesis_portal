@@ -15,49 +15,49 @@ class BizottsagSzakdolgozat
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $irasbeliEredmeny;
+    protected $irasbeliEredmeny;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $szobeliEredmeny;
+    protected $szobeliEredmeny;
 
     /**
      * @ORM\Column(type="string", length=10000)
      */
-    private $description;
+    protected $description;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $teljesitett;
+    protected $teljesitett;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $status;
+    protected $status;
 
     /**
      * @ORM\ManyToOne(targetEntity="Bizottsag", inversedBy="bizottsagBizottsagSzakdolgozat")
      * @ORM\JoinColumn(name="bizottsag", referencedColumnName="id")
      */
-    private $bizottsag;
+    protected $bizottsag;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Szakdolgozat\Szakdolgozat", inversedBy="szakdolgozatBizottsagSzakdolgozat")
      * @ORM\JoinColumn(name="szakdolgozat", referencedColumnName="id")
      */
-    private $szakdolgozat;
+    protected $szakdolgozat;
 
     /**
      * @ORM\OneToMany(targetEntity="BizottsagErtekeles", mappedBy="bizottsagSzakdolgozat")
      */
-    private $bizottsagSzakdolgozatBizottsagErtekeles;
+    protected $bizottsagSzakdolgozatBizottsagErtekeles;
 
     /**
      * Constructor

@@ -15,39 +15,39 @@ class Levelkuldo
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $name;
+    protected $name;
 
     /**
      * @ORM\Column(type="string", length=10000)
      */
-    private $description;
+    protected $description;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $allapot;
+    protected $allapot;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $status;
+    protected $status;
 
     /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="userLevelkuldo")
      * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
-    private $user;
+    protected $user;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Szakdolgozat\Szakdolgozat", inversedBy="szakdolgozatLevelkuldo")
      * @ORM\JoinColumn(name="szakdolgozat", referencedColumnName="id")
      */
-    private $szakdolgozat;
+    protected $szakdolgozat;
 
 
     /**

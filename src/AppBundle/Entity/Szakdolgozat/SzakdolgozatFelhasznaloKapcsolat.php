@@ -15,39 +15,39 @@ class SzakdolgozatFelhasznaloKapcsolat
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $viszony;
+    protected $viszony;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $allapot;
+    protected $allapot;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $peldany;
+    protected $peldany;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $status;
+    protected $status;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Felhasznalo\User", inversedBy="userKapcsolat")
      * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
-    private $user;
+    protected $user;
 
     /**
      * @ORM\ManyToOne(targetEntity="Szakdolgozat", inversedBy="szakdolgozatSzakdolgozatFelhasznaloKapcsolat")
      * @ORM\JoinColumn(name="szakdolgozat", referencedColumnName="id")
      */
-    private $szakdolgozat;
+    protected $szakdolgozat;
 
 
     /**

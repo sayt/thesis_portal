@@ -15,39 +15,39 @@ class KonzultacioFelhasznalo
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private $ajanlotDatum;
+    protected $ajanlotDatum;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private $elfogadottDatum;
+    protected $elfogadottDatum;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $allapot;
+    protected $allapot;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $status;
+    protected $status;
 
     /**
      * @ORM\ManyToOne(targetEntity="Konzultacio", inversedBy="konzultacioKonzultacioFelhasznalo")
      * @ORM\JoinColumn(name="konzultacio", referencedColumnName="id")
      */
-    private $konzultacio;
+    protected $konzultacio;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Felhasznalo\User", inversedBy="userKonzultacioFelhasznalo")
      * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
-    private $user;
+    protected $user;
 
 
     /**

@@ -15,51 +15,51 @@ class Megjegyzes
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $megjegyzesSzam;
+    protected $megjegyzesSzam;
 
     /**
      * @ORM\Column(type="string", length=10000)
      */
-    private $description;
+    protected $description;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private $datum;
+    protected $datum;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $status;
+    protected $status;
 
     /**
      * @ORM\ManyToOne(targetEntity="Szakdolgozat", inversedBy="szakdolgozatMegjegyzes")
      * @ORM\JoinColumn(name="szakdolgozat", referencedColumnName="id")
      */
-    private $szakdolgozat;
+    protected $szakdolgozat;
 
     /**
      * @ORM\ManyToOne(targetEntity="Merfoldko", inversedBy="merfoldkoMegjegyzes")
      * @ORM\JoinColumn(name="merfoldko", referencedColumnName="id")
      */
-    private $merfoldko;
+    protected $merfoldko;
 
     /**
      * @ORM\ManyToOne(targetEntity="Konzultacio", inversedBy="konzultacioMegjegyzes")
      * @ORM\JoinColumn(name="konzultacio", referencedColumnName="id")
      */
-    private $konzultacio;
+    protected $konzultacio;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Felhasznalo\User", inversedBy="userMegjegyzes")
      * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
-    private $user;
+    protected $user;
 
 
     /**

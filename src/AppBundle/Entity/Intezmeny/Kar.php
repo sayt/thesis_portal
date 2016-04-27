@@ -15,27 +15,37 @@ class Kar
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $Name;
+    protected $Name;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $shortName;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Felhasznalo\User", mappedBy="kar")
      */
-    private $karUser;
+    protected $karUser;
 
     /**
      * @ORM\OneToMany(targetEntity="Szak", mappedBy="kar")
      */
-    private $karSzak;
+    protected $karSzak;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Felhasznalo\Role", mappedBy="kar")
      */
-    private $karRole;
+    protected $karRole;
+
+    /**
+     * @ORM\OneToMany(targetEntity="TargySorrend", mappedBy="kar")
+     */
+    protected $karTargySorrend;
 
     /**
      * Constructor
@@ -177,5 +187,61 @@ class Kar
     public function getKarRole()
     {
         return $this->karRole;
+    }
+
+    /**
+     * Set shortName
+     *
+     * @param string $shortName
+     * @return Kar
+     */
+    public function setShortName($shortName)
+    {
+        $this->shortName = $shortName;
+
+        return $this;
+    }
+
+    /**
+     * Get shortName
+     *
+     * @return string 
+     */
+    public function getShortName()
+    {
+        return $this->shortName;
+    }
+
+    /**
+     * Add karTargySorrend
+     *
+     * @param \AppBundle\Entity\Intezmeny\TargySorrend $karTargySorrend
+     * @return Kar
+     */
+    public function addKarTargySorrend(\AppBundle\Entity\Intezmeny\TargySorrend $karTargySorrend)
+    {
+        $this->karTargySorrend[] = $karTargySorrend;
+
+        return $this;
+    }
+
+    /**
+     * Remove karTargySorrend
+     *
+     * @param \AppBundle\Entity\Intezmeny\TargySorrend $karTargySorrend
+     */
+    public function removeKarTargySorrend(\AppBundle\Entity\Intezmeny\TargySorrend $karTargySorrend)
+    {
+        $this->karTargySorrend->removeElement($karTargySorrend);
+    }
+
+    /**
+     * Get karTargySorrend
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getKarTargySorrend()
+    {
+        return $this->karTargySorrend;
     }
 }
