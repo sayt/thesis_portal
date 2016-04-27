@@ -55,6 +55,8 @@ class Szak
 
     /**
      * @ORM\OneToMany(targetEntity="TargySorrend", mappedBy="szak")
+     *
+     * @var \Doctrine\Common\Collections\Collection $szakTargySorrend
      */
     protected $szakTargySorrend;
 

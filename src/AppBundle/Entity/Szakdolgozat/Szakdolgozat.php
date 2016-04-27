@@ -124,6 +124,11 @@ class Szakdolgozat
     protected $szakdolgozatBizottsagSzakdolgozat;
 
     /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Intezeny\Targysorrend", mappedBy="szakdolgozat")
+     */
+    protected $szakdolgozatTargySorrend;
+
+    /**
      * Constructor
      */
     public function __construct()

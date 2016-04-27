@@ -54,16 +54,22 @@ class Targy
 
     /**
      * @ORM\OneToMany(targetEntity="TargySorrend", mappedBy="targy")
+     *
+     * @var \Doctrine\Common\Collections\Collection $targyTargySorrend
      */
     protected $targyTargySorrend;
 
     /**
      * @ORM\OneToMany(targetEntity="TargySorrend", mappedBy="elozotargy")
+     *
+     * @var \Doctrine\Common\Collections\Collection $targyTargySorrendelozo
      */
     protected $targyTargySorrendelozo;
 
     /**
      * @ORM\OneToMany(targetEntity="TargySorrend", mappedBy="kovetkezotargy")
+     *
+     * @var \Doctrine\Common\Collections\Collection $targyTargySorrendkovetkezo
      */
     protected $targyTargySorrendkovetkezo;
 

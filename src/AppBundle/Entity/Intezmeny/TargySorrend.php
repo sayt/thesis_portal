@@ -63,6 +63,12 @@ class TargySorrend
      */
     protected $kar;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Szakdolgozat", inversedBy="szakdolgozatTargySorrend")
+     * @ORM\JoinColumn(name="szakdolgozat", referencedColumnName="id")
+     */
+    protected $szakdolgozat;
+
 
     /**
      * Get id

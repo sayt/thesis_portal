@@ -57,6 +57,8 @@ class Role
 
     /**
      * @ORM\OneToMany(targetEntity="UserRoleConnect", mappedBy="role")
+     *
+     * @var \Doctrine\Common\Collections\Collection $roleUserRoleConnect
      */
     protected $roleUserRoleConnect;
 

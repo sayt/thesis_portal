@@ -44,6 +44,8 @@ class Kar
 
     /**
      * @ORM\OneToMany(targetEntity="TargySorrend", mappedBy="kar")
+     *
+     * @var \Doctrine\Common\Collections\Collection $karTargySorrend
      */
     protected $karTargySorrend;
 

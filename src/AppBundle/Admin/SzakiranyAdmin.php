@@ -29,8 +29,7 @@ class SzakiranyAdmin extends Admin
                 'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('u')
                         ->innerJoin('u.role', 'r')
-                        ->andWhere('r.name LIKE :oktato')
-                        ->setParameter('oktato', 'oktató')
+                        ->Where("r.name LIKE '%oktató%'")
                     ;
                 }
             ))
