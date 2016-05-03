@@ -124,7 +124,7 @@ class Szakdolgozat
     protected $szakdolgozatBizottsagSzakdolgozat;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Intezeny\Targysorrend", mappedBy="szakdolgozat")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Intezmeny\TargySorrend", mappedBy="szakdolgozat")
      */
     protected $szakdolgozatTargySorrend;
 
@@ -703,5 +703,38 @@ class Szakdolgozat
     public function getSzakdolgozatBizottsagSzakdolgozat()
     {
         return $this->szakdolgozatBizottsagSzakdolgozat;
+    }
+
+    /**
+     * Add szakdolgozatTargySorrend
+     *
+     * @param \AppBundle\Entity\Intezmeny\TargySorrend $szakdolgozatTargySorrend
+     * @return Szakdolgozat
+     */
+    public function addSzakdolgozatTargySorrend(\AppBundle\Entity\Intezmeny\TargySorrend $szakdolgozatTargySorrend)
+    {
+        $this->szakdolgozatTargySorrend[] = $szakdolgozatTargySorrend;
+
+        return $this;
+    }
+
+    /**
+     * Remove szakdolgozatTargySorrend
+     *
+     * @param \AppBundle\Entity\Intezmeny\TargySorrend $szakdolgozatTargySorrend
+     */
+    public function removeSzakdolgozatTargySorrend(\AppBundle\Entity\Intezmeny\TargySorrend $szakdolgozatTargySorrend)
+    {
+        $this->szakdolgozatTargySorrend->removeElement($szakdolgozatTargySorrend);
+    }
+
+    /**
+     * Get szakdolgozatTargySorrend
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSzakdolgozatTargySorrend()
+    {
+        return $this->szakdolgozatTargySorrend;
     }
 }

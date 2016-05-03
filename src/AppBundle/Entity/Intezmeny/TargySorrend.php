@@ -64,7 +64,7 @@ class TargySorrend
     protected $kar;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Szakdolgozat", inversedBy="szakdolgozatTargySorrend")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Szakdolgozat\Szakdolgozat", inversedBy="szakdolgozatTargySorrend")
      * @ORM\JoinColumn(name="szakdolgozat", referencedColumnName="id")
      */
     protected $szakdolgozat;
@@ -262,5 +262,28 @@ class TargySorrend
     public function getKar()
     {
         return $this->kar;
+    }
+
+    /**
+     * Set szakdolgozat
+     *
+     * @param \AppBundle\Entity\Szakdolgozat\Szakdolgozat $szakdolgozat
+     * @return TargySorrend
+     */
+    public function setSzakdolgozat(\AppBundle\Entity\Szakdolgozat\Szakdolgozat $szakdolgozat = null)
+    {
+        $this->szakdolgozat = $szakdolgozat;
+
+        return $this;
+    }
+
+    /**
+     * Get szakdolgozat
+     *
+     * @return \AppBundle\Entity\Szakdolgozat\Szakdolgozat
+     */
+    public function getSzakdolgozat()
+    {
+        return $this->szakdolgozat;
     }
 }
