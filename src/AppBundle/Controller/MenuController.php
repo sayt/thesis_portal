@@ -31,7 +31,7 @@ class MenuController extends Controller
             ),
             array(
                 "name" => "Téma kiírás",
-                "link" => "homepage",
+                "link" => "new_tema",
                 "role" => array("ROLE_HALLGATO", "ROLE_OKTATO")
             ),
             array(

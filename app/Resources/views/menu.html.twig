@@ -1,9 +1,9 @@
 {% for menu in menus %}
     {% for role in menu.role %}
         {% if role == "null" or role == is_granted(role) %}
-            <a href="{{ path(menu.link) }}">
-                {{ menu.name }}
-            </a>
+                <a href="{{ path(menu.link) }}">
+                    {{ menu.name }}
+                </a> |
         {% endif %}
     {% endfor  %}
 {% endfor %}

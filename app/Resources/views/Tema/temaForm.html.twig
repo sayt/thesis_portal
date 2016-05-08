@@ -1,0 +1,48 @@
+{% extends '::layout.html.twig' %}
+{% block title %} Új téma felvétele{% endblock %}
+
+{% block content %}
+    {{ form_start(szakdolgozat) }}
+    {{ form_errors(szakdolgozat) }}
+    <div>
+        {{ form_label(szakdolgozat.hun_name)}}
+        {{ form_errors(szakdolgozat.hun_name) }}
+        {{ form_widget(szakdolgozat.hun_name) }}
+    </div>
+    <div>
+        {{ form_label(szakdolgozat.eng_name)}}
+        {{ form_errors(szakdolgozat.eng_name) }}
+        {{ form_widget(szakdolgozat.eng_name) }}
+    </div>
+    <div>
+        {{ form_label(szakdolgozat.language)}}
+        {{ form_errors(szakdolgozat.language) }}
+        {{ form_widget(szakdolgozat.language) }}
+    </div>
+    <div>
+        {{ form_label(szakdolgozat.szak)}}
+        {{ form_errors(szakdolgozat.szak) }}
+        {{ form_widget(szakdolgozat.szak) }}
+    </div>
+    <div>
+        {{ form_label(szakdolgozat.hallgato_szam)}}
+        {{ form_errors(szakdolgozat.hallgato_szam) }}
+        {{ form_widget(szakdolgozat.hallgato_szam) }}
+    </div>
+    <div>
+        {{ form_label(szakdolgozat.titkos)}}
+        {{ form_errors(szakdolgozat.titkos) }}
+        {{ form_widget(szakdolgozat.titkos) }}
+    </div>
+    <div>
+        {{ form_label(szakdolgozat.description)}}
+        {{ form_errors(szakdolgozat.description) }}
+        {{ form_widget(szakdolgozat.description) }}
+    </div>
+    <div>
+        {{ form_label(szakdolgozat.create) }}
+        {{ form_widget(szakdolgozat.create) }}
+    </div>
+
+    {{ form_end(szakdolgozat) }}
+{% endblock %}

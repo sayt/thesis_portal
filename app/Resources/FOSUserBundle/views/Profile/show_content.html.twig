@@ -1,0 +1,13 @@
+{% extends '::layout.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block content %}
+<div class="fos_user_user_show">
+    <p>{{ 'profile.show.name'|trans }}: {{ user.name }}</p>
+    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+    <p>{{ 'profile.show.faculty'|trans }}: {{ user.kar.name }}</p>
+    <p>{{ 'profile.show.htsz'|trans }}: {{ user.hallgatoiTorzskonyviSzam }}</p>
+    <p>{{ 'profile.show.course-unit'|trans }}: {{ user.targy.name }}</p>
+    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+</div>
+{% endblock %}
