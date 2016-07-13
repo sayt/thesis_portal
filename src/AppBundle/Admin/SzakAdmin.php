@@ -16,8 +16,9 @@ class SzakAdmin extends Admin
     {
         $formMapper
             ->add("name", TextType::class, array("translation_domain" => "User" ))
+            ->add("short_name", TextType::class, array("translation_domain" => "User" ))
             ->add("kar", null, array(
-                "class" => 'AppBundle\Entity\Intezmeny\Intezet',
+                "class" => 'AppBundle\Entity\Intezmeny\Kar',
                 "property" => "name",
             ))
             ->add("status", ChoiceType::class, array(
@@ -41,6 +42,7 @@ class SzakAdmin extends Admin
     {
         $listMapper
             ->add("kar.name", null, array( "label" => "Kar"))
+            ->add("short_name", null, array( "label" => "Szak röviden"))
             ->addIdentifier("name", null, array( "label" => "Szak"))
         ;
     }

@@ -15,6 +15,7 @@ class KarAdmin extends Admin
     {
         $formMapper
             ->add("name", TextType::class, array("translation_domain" => "User" ))
+            ->add("short_name", TextType::class, array("translation_domain" => "User" ))
         ;
     }
 
@@ -26,6 +27,7 @@ class KarAdmin extends Admin
     {
         $listMapper
             ->addIdentifier("name", null, array("translation_domain" => "User" ))
+            ->addIdentifier("short_name", null, array("translation_domain" => "User" ))
         ;
     }
 

@@ -16,6 +16,7 @@ class IntezetAdmin extends Admin
     {
         $formMapper
             ->add("name", TextType::class, array("translation_domain" => "User" ))
+            ->add("short_name", TextType::class, array("translation_domain" => "User" ))
             ->add("szak", null, array(
                 "class" => 'AppBundle\Entity\Intezmeny\Szak',
                 "property" => "name",
@@ -39,6 +40,7 @@ class IntezetAdmin extends Admin
         $listMapper
             ->add("szak.kar.name", null, array( "label" => "Kar"))
             ->add("szak.name", null, array( "label" => "Szak"))
+            ->add("short_name", null, array( "label" => "Intezet röviden"))
             ->addIdentifier("name", null, array( "label" => "Intezet"))
             ->add("status")
         ;

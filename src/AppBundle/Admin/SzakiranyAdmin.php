@@ -19,13 +19,14 @@ class SzakiranyAdmin extends Admin
     {
         $formMapper
             ->add("name", TextType::class, array("translation_domain" => "User"))
+            ->add("short_name", TextType::class, array("translation_domain" => "User"))
             ->add("intezet", null, array(
                 "class" => 'AppBundle\Entity\Intezmeny\Intezet',
                 "property" => "name",
             ))
             ->add("user", EntityType::class, array(
                 "class" => 'AppBundle\Entity\Felhasznalo\User',
-                "property" => "name",
+                "property" => "username",
                 'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('u')
                         ->innerJoin('u.role', 'r')
@@ -58,8 +59,9 @@ class SzakiranyAdmin extends Admin
             ->add("intezet.szak.kar.name", null, array("label" => "Kar"))
             ->add("intezet.szak.name", null, array("label" => "Szak"))
             ->add("intezet.name", null, array("label" => "Intézet"))
+            ->add("short_name", null, array("label" => "Szakirány röviden"))
             ->addIdentifier("name", null, array("label" => "Szakirány"))
-            ->add("user.name")
+            ->add("user.username")
             ;
     }
 
