@@ -30,7 +30,7 @@ class HataridoAdmin extends Admin
             ->add("vege", DateTimeType::class, array(
                 'placeholder' => array(
                     'year' => date("Y"),
-                    'month' => (date("m") <= 9) ? "Dec" : "6",
+                    //'month' => (date("m") <= 9) ? "Dec" : "6",
                     'day' => date("d"),
                     'hour' => '23',
                     'minute' => '59',
