@@ -45,7 +45,7 @@ class Szakirany
     protected $user;
 
     /**
-     * @ORM\OneToOne(targetEntity="Targy", inversedBy="targySzakirany")
+     * @ORM\ManyToOne(targetEntity="Targy", inversedBy="targySzakirany")
      * @ORM\JoinColumn(name="targy", referencedColumnName="id")
      */
     protected $targy;

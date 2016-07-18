@@ -36,3 +36,15 @@ services:
           arguments: [~, AppBundle\Entity\Intezmeny\Szakirany, ~]
           tags:
             - { name: sonata.admin, manager_type: orm, group: Intézmény, label: Szakirány }
+
+    admin.Targy:
+          class: AppBundle\Admin\TargyAdmin
+          arguments: [~, AppBundle\Entity\Intezmeny\Targy, ~]
+          tags:
+            - { name: sonata.admin, manager_type: orm, group: Intézmény, label: Tárgy }
+
+    admin.Hatarido:
+          class: AppBundle\Admin\HataridoAdmin
+          arguments: [~, AppBundle\Entity\Intezmeny\Hatarido, ~]
+          tags:
+            - { name: sonata.admin, manager_type: orm, group: Intézmény, label: Határidő }

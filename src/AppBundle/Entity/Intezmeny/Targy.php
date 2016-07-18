@@ -48,7 +48,7 @@ class Targy
     protected $targyUser;
 
     /**
-     * @ORM\OneToOne(targetEntity="Szakirany", mappedBy="targy")
+     * @ORM\OneToMany(targetEntity="Szakirany", mappedBy="targy")
      */
     protected $targySzakirany;
 
