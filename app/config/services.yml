@@ -7,44 +7,54 @@ services:
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+#---------------- Felhasználó ----------------
     admin.User:
-          class: AppBundle\Admin\UserAdmin
+          class: AppBundle\Admin\Felhasznalo\UserAdmin
           arguments: [~, AppBundle\Entity\Felhasznalo\User, ~]
           tags:
             - { name: sonata.admin, manager_type: orm, group: Felhasználó, label: Felhasználók }
 
+#---------------- Intezmény ----------------
     admin.Kar:
-          class: AppBundle\Admin\KarAdmin
+          class: AppBundle\Admin\Intezmeny\KarAdmin
           arguments: [~, AppBundle\Entity\Intezmeny\Kar, ~]
           tags:
             - { name: sonata.admin, manager_type: orm, group: Intézmény, label: Kar }
 
     admin.Szak:
-          class: AppBundle\Admin\SzakAdmin
+          class: AppBundle\Admin\Intezmeny\SzakAdmin
           arguments: [~, AppBundle\Entity\Intezmeny\Szak, ~]
           tags:
             - { name: sonata.admin, manager_type: orm, group: Intézmény, label: Szak }
 
     admin.Intezet:
-          class: AppBundle\Admin\IntezetAdmin
+          class: AppBundle\Admin\Intezmeny\IntezetAdmin
           arguments: [~, AppBundle\Entity\Intezmeny\Intezet, ~]
           tags:
             - { name: sonata.admin, manager_type: orm, group: Intézmény, label: Intézet }
 
     admin.Szakirany:
-          class: AppBundle\Admin\SzakiranyAdmin
+          class: AppBundle\Admin\Intezmeny\SzakiranyAdmin
           arguments: [~, AppBundle\Entity\Intezmeny\Szakirany, ~]
           tags:
             - { name: sonata.admin, manager_type: orm, group: Intézmény, label: Szakirány }
-
+#---------------- Tárgy ----------------
     admin.Targy:
-          class: AppBundle\Admin\TargyAdmin
+          class: AppBundle\Admin\Targy\TargyAdmin
           arguments: [~, AppBundle\Entity\Intezmeny\Targy, ~]
           tags:
-            - { name: sonata.admin, manager_type: orm, group: Intézmény, label: Tárgy }
+            - { name: sonata.admin, manager_type: orm, group: Tárgy, label: Tárgy }
 
+    admin.TargySorrend:
+          class: AppBundle\Admin\Targy\TargySorrendAdmin
+          arguments: [~, AppBundle\Entity\Intezmeny\TargySorrend, ~]
+          tags:
+            - { name: sonata.admin, manager_type: orm, group: Tárgy, label: Tárgyak }
+
+#---------------- Egyéb ----------------
     admin.Hatarido:
-          class: AppBundle\Admin\HataridoAdmin
+          class: AppBundle\Admin\Intezmeny\HataridoAdmin
           arguments: [~, AppBundle\Entity\Intezmeny\Hatarido, ~]
           tags:
-            - { name: sonata.admin, manager_type: orm, group: Intézmény, label: Határidő }
+            - { name: sonata.admin, manager_type: orm, group: Egyéb, label: Határidő }

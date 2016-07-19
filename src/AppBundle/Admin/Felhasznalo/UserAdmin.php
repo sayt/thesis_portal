@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Admin;
+namespace AppBundle\Admin\Felhasznalo;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;

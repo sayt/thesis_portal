@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Admin;
+namespace AppBundle\Admin\Intezmeny;
 
 use Sonata\AdminBundle\Admin\Admin;
 use AppBundle\Entity\Intezmeny\Kar;

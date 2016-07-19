@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Admin;
+namespace AppBundle\Admin\Intezmeny;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
@@ -18,24 +18,8 @@ class HataridoAdmin extends Admin
         $formMapper
             ->add("name", TextType::class, array("translation_domain" => "User" ))
             ->add("description", TextType::class, array( "translation_domain" => "User" ))
-            ->add("kezdete", DateTimeType::class, array(
-                'placeholder' => array(
-                    'year' => date("Y"),
-                    'month' => date("M"),
-                    'day' => date("d"),
-                    'hour' => '23',
-                    'minute' => '59',
-                    'second' => '00',
-                )))
-            ->add("vege", DateTimeType::class, array(
-                'placeholder' => array(
-                    'year' => date("Y"),
-                    //'month' => (date("m") <= 9) ? "Dec" : "6",
-                    'day' => date("d"),
-                    'hour' => '23',
-                    'minute' => '59',
-                    'second' => '00',
-            )))
+            ->add("kezdete", DateTimeType::class, array())
+            ->add("vege", DateTimeType::class, array())
             ->add("status", ChoiceType::class, array(
                 "translation_domain" => "User",
                 "choices"  => array(
