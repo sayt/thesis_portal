@@ -43,6 +43,11 @@ class File
     protected $status;
 
     /**
+     * @ORM\Column(type="string", length=1000)
+     */
+    protected $allapot;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Szakdolgozat", inversedBy="szakdolgozatFile")
      * @ORM\JoinColumn(name="szakdolgozat", referencedColumnName="id")
      */
@@ -253,5 +258,28 @@ class File
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Set allapot
+     *
+     * @param string $allapot
+     * @return File
+     */
+    public function setAllapot($allapot)
+    {
+        $this->allapot = $allapot;
+
+        return $this;
+    }
+
+    /**
+     * Get allapot
+     *
+     * @return string 
+     */
+    public function getAllapot()
+    {
+        return $this->allapot;
     }
 }
