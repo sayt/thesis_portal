@@ -15,15 +15,19 @@ class TemaFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add("hun_name", TextType::class)
-            ->add("eng_name", TextType::class)
+            ->add("hun_name", TextType::class, array( "label" => "Magyar cím:"))
+            ->add("eng_name", TextType::class, array( "label" => "Angol cím:"))
             ->add("szak", EntityType::class, array(
                 "class" => 'AppBundle\Entity\Intezmeny\Szak',
                 "property" => "name",
                 'query_builder' => function (EntityRepository $er) {
-                    return $er->createQueryBuilder('sz')
-                        ->innerJoin('sz.kar', 'k')
-/*????*/                        ->Where("k.id = 1")
+                    return $er->createQueryBuilder()
+                    ->select('sz')
+                        ->from('AppBundle\Entity\Felhasznalo\UserRoleConnect', 'u')
+                        ->innerJoin('u.')
+//                    return $er->createQueryBuilder('sz')
+//                        ->innerJoin('sz.kar', 'k')
+///*????*/                        ->Where("k.id = ")
                         ;
                 }
             ))
