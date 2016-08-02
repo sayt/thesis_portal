@@ -1,12 +1,15 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
+    <div id="role_change">
+
+    </div>
     <div id="menu">
         {{ render(controller("AppBundle:Menu:menu"),{ 'max': 1 }) }}
     </div>
     <div id="login">
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            Hello {{ app.user.username }}!
+            Hello {{ app.user.name }}!
             <a href="{{ path('fos_user_security_logout') }}">
                 {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
             </a>

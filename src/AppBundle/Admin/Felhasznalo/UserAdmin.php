@@ -24,7 +24,7 @@ class UserAdmin extends Admin
             ))
             ->add("hallgatoi_torzskonyvi_szam", TextType::class, array( "translation_domain" => "User" ))
             ->add("phone_number", TextType::class, array( "translation_domain" => "User" ))
-            ->add("status", ChoiceType::class, array(
+            ->add("enabled", ChoiceType::class, array(
                 "translation_domain" => "User",
                 "choices"  => array(
                     true => "Aktív",
@@ -91,7 +91,7 @@ class UserAdmin extends Admin
                 "class" =>'AppBundle\Entity\Felhasznalo\Role',
                 "property" => "name",
             ))
-            ->add("status")
+            ->add("enabled")
         ;
     }
 

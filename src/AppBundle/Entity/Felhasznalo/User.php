@@ -44,11 +44,6 @@ class User extends BaseUser
     protected $emailSummaryTime;
 
     /**
-     * @ORM\Column(type="boolean")
-     */
-    protected $status;
-
-    /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Intezmeny\Kar", inversedBy="karUser")
      * @ORM\JoinColumn(name="kar", referencedColumnName="id")
      */
@@ -283,29 +278,6 @@ class User extends BaseUser
     public function getEmailSummaryTime()
     {
         return $this->emailSummaryTime;
-    }
-
-    /**
-     * Set status
-     *
-     * @param boolean $status
-     * @return User
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
-
-        return $this;
-    }
-
-    /**
-     * Get status
-     *
-     * @return boolean 
-     */
-    public function getStatus()
-    {
-        return $this->status;
     }
 
     /**

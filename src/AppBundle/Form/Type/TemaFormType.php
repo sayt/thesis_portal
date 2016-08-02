@@ -21,13 +21,9 @@ class TemaFormType extends AbstractType
                 "class" => 'AppBundle\Entity\Intezmeny\Szak',
                 "property" => "name",
                 'query_builder' => function (EntityRepository $er) {
-                    return $er->createQueryBuilder()
-                    ->select('sz')
-                        ->from('AppBundle\Entity\Felhasznalo\UserRoleConnect', 'u')
-                        ->innerJoin('u.')
-//                    return $er->createQueryBuilder('sz')
-//                        ->innerJoin('sz.kar', 'k')
-///*????*/                        ->Where("k.id = ")
+                    return $er->createQueryBuilder('sz')
+                        ->innerJoin('sz.kar', 'k')
+                        ->Where("sz.status = true")
                         ;
                 }
             ))
