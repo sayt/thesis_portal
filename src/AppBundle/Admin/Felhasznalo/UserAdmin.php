@@ -37,8 +37,7 @@ class UserAdmin extends Admin
             ))
             ->add("role", null, array(
                 "class" => 'AppBundle\Entity\Felhasznalo\Role',
-                "property" => "name",
-                "_sort_by" => "ASC"
+                "property" => "name"
             ))
             ->add("roles")
         ;

@@ -15,6 +15,12 @@ services:
           tags:
             - { name: sonata.admin, manager_type: orm, group: Felhasználó, label: Felhasználók }
 
+    admin.UserRoleConnect:
+          class: AppBundle\Admin\Felhasznalo\UserRoleConnectAdmin
+          arguments: [~, AppBundle\Entity\Felhasznalo\UserRoleConnect, ~]
+          tags:
+            - { name: sonata.admin, manager_type: orm, group: Felhasználó, label: "Felhasználó kapcsolat" }
+
 #---------------- Intezmény ----------------
     admin.Kar:
           class: AppBundle\Admin\Intezmeny\KarAdmin
